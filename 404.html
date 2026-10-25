@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · Amazon the Dog</title>
+<meta name="description" content="This page could not be found. Head back to Amazon the Dog.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+@font-face { font-family: "Fredoka"; font-style: normal; font-weight: 300 700; font-display: swap; src: url(/fonts/fredoka-latin-var.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/fonts/inter-latin-var.woff2) format("woff2"); }
+:root {
+  --bg: #F6F1E7; --ink: #141414; --muted: #5B554B; --teal: #1FA3A3; --teal-strong: #137F80; --on-teal: #FFFFFF; --green: #2F6B3F; --gold: #E3B23C;
+  --display: "Fredoka", "Baloo 2", ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #121412; --ink: #F3EEE3; --muted: #B6AFA2; --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414; --green: #7DBB8C; --gold: #EBC15A; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #121412; --ink: #F3EEE3; --muted: #B6AFA2; --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414; --green: #7DBB8C; --gold: #EBC15A; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.6; padding: 32px 16px; }
+main { max-width: 560px; display: grid; gap: 20px; justify-items: start; }
+.disc { width: 132px; height: 48px; border-radius: 50%; transform: rotate(-14deg); box-shadow: 0 10px 18px -10px rgba(0,0,0,.45);
+  background: radial-gradient(ellipse at 50% 50%, var(--teal) 0 30%, color-mix(in srgb, #fff 45%, var(--teal)) 31% 34%, var(--teal) 35% 60%, color-mix(in srgb, #000 22%, var(--teal)) 61% 66%, var(--teal) 67% 100%); }
+.eyebrow { margin: 0; font-family: var(--display); font-weight: 500; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+h1 { margin: 0; font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 7vw, 3.5rem); line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; }
+p { margin: 0; color: var(--muted); font-size: 1.125rem; }
+a.btn { display: inline-flex; align-items: center; font-family: var(--display); font-weight: 600; font-size: 1.125rem; text-decoration: none; padding: 14px 22px; border-radius: 999px; background: var(--teal-strong); color: var(--on-teal); }
+a.btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <span class="disc" aria-hidden="true"></span>
+  <p class="eyebrow">404 · Page not found</p>
+  <h1>This page ran off after the frisbee.</h1>
+  <p>The page you were looking for isn't here. Amazon is, though.</p>
+  <a class="btn" href="/">Back to Amazon the Dog</a>
+</main>
+</body>
+</html>

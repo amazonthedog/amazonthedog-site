@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amazon the Dog</title>
+<meta name="description" content="Amazon the Dog is a black Golden Retriever and German Shepherd mix who proves big dogs can have the softest hearts. Follow on Instagram and Facebook.">
+<link rel="canonical" href="https://amazonthedog.com/">
+<meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="fonts/fredoka-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/avif" imagesrcset="img/hero-400.avif 400w, img/hero-640.avif 640w, img/hero-900.avif 900w" imagesizes="(max-width: 880px) min(400px, calc(100vw - 52px)), (max-width: 1120px) 37vw, 420px" fetchpriority="high">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amazon the Dog">
+<meta property="og:title" content="Amazon the Dog">
+<meta property="og:description" content="Amazon the Dog is a black Golden Retriever and German Shepherd mix who proves big dogs can have the softest hearts. Follow on Instagram and Facebook.">
+<meta property="og:url" content="https://amazonthedog.com/">
+<meta property="og:image" content="https://amazonthedog.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amazon, a black Golden Retriever and German Shepherd mix, with the words Shepherd strength. Golden heart.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amazon the Dog">
+<meta name="twitter:description" content="Amazon the Dog is a black Golden Retriever and German Shepherd mix who proves big dogs can have the softest hearts. Follow on Instagram and Facebook.">
+<meta name="twitter:image" content="https://amazonthedog.com/og-image.jpg">
+<meta name="twitter:image:alt" content="Amazon, a black Golden Retriever and German Shepherd mix, with the words Shepherd strength. Golden heart.">
+<style>
+/* Self-hosted fonts (Latin subset, variable wght trimmed to the weights used). Fallback faces are metric-matched to cut layout shift on swap. */
+@font-face { font-family: "Fredoka"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/fredoka-latin-var.woff2) format("woff2"); unicode-range: U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122; }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400 600; font-display: swap; src: url(fonts/inter-latin-var.woff2) format("woff2"); unicode-range: U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122; }
+@font-face { font-family: "Fredoka Fallback"; font-weight: 300 500; src: local("Arial"), local("ArialMT"), local("Liberation Sans"); size-adjust: 100.06%; ascent-override: 97.34%; descent-override: 23.59%; line-gap-override: 0%; }
+@font-face { font-family: "Fredoka Fallback"; font-weight: 600 700; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"); size-adjust: 93.4%; ascent-override: 104.3%; descent-override: 25.3%; line-gap-override: 0%; }
+@font-face { font-family: "Inter Fallback"; src: local("Arial"), local("ArialMT"), local("Liberation Sans"); size-adjust: 106.23%; ascent-override: 91.22%; descent-override: 22.78%; line-gap-override: 0%; }
+/* Layout: a backyard catch. Wide cream field, a teal frisbee in flight across the hero,
+   story sections alternate cream and field-green bands, SB7 order top to bottom. */
+:root {
+  --bg: #F6F1E7;          /* Warm Cream */
+  --surface: #FFFBF3;
+  --ink: #141414;         /* Coat Black */
+  --muted: #5B554B;
+  --line: #E2D9C8;
+  --teal: #1FA3A3;        /* Frisbee Teal, signature */
+  --teal-strong: #137F80; /* teal for button fills with white text */
+  --on-teal: #FFFFFF;
+  --green: #2F6B3F;       /* Field Green */
+  --band: #2F6B3F;
+  --on-band: #F6F1E7;
+  --on-band-muted: #CFE0D1;
+  --gold: #E3B23C;        /* Golden Heart, small accents */
+  --gold-on-band: #F5D98A; /* small gold text on the green band (4.6:1) */
+  --pink: #E8457A;        /* Gear Pink */
+  --photo-a: #2A2D2A;
+  --photo-b: #121312;
+  --solid: #141414;
+  --on-solid: #F6F1E7;
+
+  --display: "Fredoka", "Fredoka Fallback", "Baloo 2", ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --s1: 0.875rem; --s2: 1rem; --s3: 1.125rem; --s4: 1.5rem; --s5: 2.25rem; --s6: clamp(2.6rem, 7vw, 5rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121412; --surface: #1A1E1B; --ink: #F3EEE3; --muted: #B6AFA2; --line: #2C322D;
+    --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414;
+    --green: #7DBB8C; --band: #1C3424; --on-band: #F3EEE3; --on-band-muted: #A9C7AF;
+    --gold: #EBC15A; --gold-on-band: #EBC15A; --pink: #F06A95; --photo-a: #2F3430; --photo-b: #1A1D1A;
+    --solid: #F3EEE3; --on-solid: #121412;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121412; --surface: #1A1E1B; --ink: #F3EEE3; --muted: #B6AFA2; --line: #2C322D;
+  --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414;
+  --green: #7DBB8C; --band: #1C3424; --on-band: #F3EEE3; --on-band-muted: #A9C7AF;
+  --gold: #EBC15A; --gold-on-band: #EBC15A; --pink: #F06A95; --photo-a: #2F3430; --photo-b: #1A1D1A;
+  --solid: #F3EEE3; --on-solid: #121412;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--s2); line-height: 1.6; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+
+.wrap { max-width: 1120px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.section { padding-block: clamp(56px, 9vw, 112px); }
+.band { background: var(--band); color: var(--on-band); }
+.eyebrow { font-family: var(--display); font-weight: 500; font-size: var(--s1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.band .eyebrow { color: var(--gold-on-band); }
+.lede { font-size: var(--s3); color: var(--muted); max-width: 60ch; }
+.band .lede { color: var(--on-band-muted); }
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: var(--s3); text-decoration: none; padding: 14px 22px; border-radius: 999px; border: 0; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-ig { background: var(--teal-strong); color: var(--on-teal); box-shadow: 0 6px 0 -2px color-mix(in srgb, var(--teal-strong) 45%, transparent); }
+.btn-fb { background: var(--solid); color: var(--on-solid); }
+.band .btn-fb { background: var(--on-band); color: var(--band); }
+.handle { font-size: var(--s1); color: var(--muted); }
+.band .handle { color: var(--on-band-muted); }
+
+/* Header */
+.top { padding-block: 18px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.3rem; text-decoration: none; }
+.mark .mini-disc { width: 30px; height: 12px; }
+nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
+nav a { text-decoration: none; font-weight: 500; font-size: var(--s1); color: var(--muted); }
+nav a:hover { color: var(--ink); }
+
+/* Frisbee drawn in CSS: concentric rings on a flattened disc */
+.disc { border-radius: 50%; background:
+  radial-gradient(ellipse at 50% 50%, var(--teal) 0 30%, color-mix(in srgb, #fff 45%, var(--teal)) 31% 34%, var(--teal) 35% 60%, color-mix(in srgb, #000 22%, var(--teal)) 61% 66%, var(--teal) 67% 100%);
+  box-shadow: 0 10px 18px -10px rgba(0,0,0,.45); }
+
+/* Hero */
+.hero { padding-block: clamp(28px, 5vw, 64px) clamp(56px, 8vw, 96px); position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: var(--s6); font-weight: 700; }
+.hero h1 .gold { position: relative; white-space: nowrap; }
+.hero h1 .gold::after { content: ""; position: absolute; left: 2%; right: 2%; bottom: 0.04em; height: 0.18em; background: var(--gold); border-radius: 999px; z-index: -1; opacity: .85; }
+.hero h1 span { display: block; position: relative; z-index: 0; }
+.hero h1 .gold { display: inline-block; }
+.hero-photo { position: relative; min-width: 0; }
+.hero-photo .frame { transform: rotate(2.5deg); }
+.flying-disc { position: absolute; width: 132px; height: 48px; top: -18px; left: -46px; transform: rotate(-14deg); animation: fly 1.4s cubic-bezier(.2,.7,.25,1) .2s both; z-index: 2; }
+@keyframes fly { from { transform: translate(-220px, 140px) rotate(-40deg) scale(.7); } to { transform: rotate(-14deg); } }
+.bubble { position: absolute; right: -8px; bottom: 34px; background: var(--surface); color: var(--ink); border: 2px solid var(--ink); border-radius: 18px 18px 4px 18px; padding: 10px 14px; font-family: var(--display); font-weight: 500; font-size: var(--s2); line-height: 1.3; max-width: 210px; box-shadow: 4px 4px 0 var(--ink); z-index: 2; }
+.bubble small { display: block; font-family: var(--body); font-size: 0.72rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 2px; }
+
+/* Photo slots: swap the gradient for her real photo at launch */
+.frame { background: var(--surface); padding: 10px 10px 14px; border-radius: 6px; box-shadow: 0 18px 40px -22px rgba(20,20,20,.55); margin: 0; }
+.ph { position: relative; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 3px; overflow: hidden;
+  background: radial-gradient(120% 80% at 30% 20%, var(--photo-a), var(--photo-b)); }
+.ph::before { content: ""; position: absolute; inset: 0; background: radial-gradient(40% 30% at 62% 38%, rgba(227,178,60,.18), transparent 70%); }
+.ph picture { display: contents; }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph .file { position: absolute; left: 10px; bottom: 10px; font-family: var(--mono); font-size: 0.7rem; color: #E9E3D6; background: rgba(0,0,0,.45); padding: 3px 7px; border-radius: 4px; max-width: calc(100% - 20px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ph .slot { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); color: rgba(233,227,214,.55); font-size: var(--s1); letter-spacing: .1em; text-transform: uppercase; }
+.frame figcaption { font-family: var(--display); font-size: var(--s1); color: var(--muted); padding: 10px 4px 0; line-height: 1.35; }
+.ph.wide { aspect-ratio: 3 / 2; }
+.ph.square { aspect-ratio: 1; }
+.span2 { grid-column: span 2; }
+.ph.wide2 { aspect-ratio: auto; height: 100%; }
+.span2 { display: flex; flex-direction: column; }
+.span2 .ph { flex: 1; min-height: 0; }
+.ph.wide2 img { position: absolute; inset: 0; }
+.ph img + * { display: none; }
+.ph:has(img)::before { display: none; }
+
+/* Problem */
+.problem .head { display: grid; gap: 16px; margin-bottom: 40px; }
+.problem h2, .h2 { font-size: var(--s5); }
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.trio > div { border-top: 3px solid var(--ink); padding-top: 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.trio h3 { font-size: var(--s4); }
+.trio p { color: var(--muted); }
+.turn { margin-top: 40px; font-family: var(--display); font-size: var(--s4); font-weight: 500; max-width: 34ch; }
+.turn b { color: var(--teal-strong); font-weight: 600; }
+
+/* Guide */
+.guide .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.guide-copy { display: grid; gap: 18px; min-width: 0; }
+.guide-copy p { font-size: var(--s3); color: var(--on-band-muted); max-width: 58ch; }
+.guide-copy p.first { color: var(--on-band); }
+.sign { font-family: var(--display); font-weight: 500; color: var(--gold-on-band); font-size: var(--s3); }
+.thennow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: end; }
+.thennow .frame:first-child { transform: rotate(-3deg); }
+.thennow .frame:last-child { transform: rotate(2deg) translateY(-24px); }
+.facts-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: color-mix(in srgb, var(--on-band) 20%, transparent); border-radius: 10px; overflow: hidden; margin-top: 8px; }
+.facts-strip div { background: var(--band); padding: 14px 16px; }
+.facts-strip dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--on-band-muted); }
+.facts-strip dd { margin: 2px 0 0; font-family: var(--display); font-weight: 600; font-size: var(--s3); font-variant-numeric: tabular-nums; }
+
+/* Plan */
+.plan .head { display: grid; gap: 14px; margin-bottom: 36px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
+.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.steps li::before { content: counter(step); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: var(--s3); background: var(--teal-strong); color: var(--on-teal); }
+.steps h3 { font-size: var(--s4); }
+.steps p { color: var(--muted); }
+
+/* Lineup (series schedule) */
+.lineup { margin-top: 56px; display: grid; gap: 14px; }
+.lineup h3.title { font-size: var(--s4); }
+.show { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding-block: 16px; border-top: 1px solid var(--line); align-items: baseline; }
+.show:last-child { border-bottom: 1px solid var(--line); }
+.when { font-family: var(--display); font-weight: 500; font-size: var(--s1); letter-spacing: .06em; text-transform: uppercase; color: var(--green); }
+.show h4 { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--s3); }
+.show p { color: var(--muted); max-width: 65ch; }
+.show > div { min-width: 0; }
+
+/* Meet Amazon */
+.meet .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 72px); align-items: start; }
+.meet-left { display: grid; gap: 18px; min-width: 0; }
+.fact-sheet { margin: 0; display: grid; border-top: 2px solid var(--ink); }
+.fact-sheet div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.fact-sheet dt { font-size: var(--s1); color: var(--muted); }
+.fact-sheet dd { margin: 0; font-weight: 500; min-width: 0; }
+.halves { display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px; overflow: hidden; border: 2px solid var(--ink); }
+.half { padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.half.shepherd { background: var(--solid); color: var(--on-solid); }
+.half.golden { background: color-mix(in srgb, var(--gold) 28%, var(--surface)); }
+.half h3 { font-size: var(--s4); }
+.half ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.half .tag { font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+
+/* Gallery */
+.gallery .head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid .frame:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.grid .frame:nth-child(3n+3) { transform: rotate(1deg); }
+
+/* Stakes */
+.stakes .wrap > .h2 { margin-bottom: 32px; }
+.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.versus > div { border-radius: 18px; padding: 28px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.without { border: 2px dashed var(--line); color: var(--muted); }
+.with { background: var(--surface); border: 2px solid var(--teal); }
+.versus h3 { font-size: var(--s4); color: var(--ink); }
+.versus ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.versus li { padding-left: 28px; position: relative; }
+.without li::before { content: "–"; position: absolute; left: 6px; }
+.with li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 16px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+/* Join the pack */
+.pack { text-align: left; position: relative; overflow: hidden; }
+.pack .wrap { position: relative; z-index: 1; }
+.pack-dog { position: absolute; right: 0; bottom: 0; width: min(34vw, 400px); height: auto; z-index: 0; filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)); }
+@media (max-width: 880px) { .pack-dog { display: none; } }
+.pack .wrap { display: grid; gap: 28px; }
+.pack h2 { font-size: var(--s6); font-weight: 700; }
+.tagline2 { font-family: var(--display); font-size: var(--s4); color: var(--gold); }
+.mail { margin-top: 12px; padding-top: 28px; border-top: 1px solid color-mix(in srgb, var(--on-band) 25%, transparent); display: grid; gap: 12px; max-width: 560px; }
+.mail p { color: var(--on-band-muted); }
+.mail form { display: flex; gap: 10px; flex-wrap: wrap; }
+.mail label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.mail input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 13px 16px; border-radius: 999px; border: 2px solid color-mix(in srgb, var(--on-band) 35%, transparent); background: color-mix(in srgb, var(--on-band) 8%, transparent); color: var(--on-band); }
+.mail input::placeholder { color: var(--on-band-muted); }
+.mail .btn { font-size: var(--s2); padding: 12px 20px; background: var(--gold); color: #141414; }
+.mail .note { font-size: var(--s1); color: var(--on-band); min-height: 1.4em; }
+
+/* Footer */
+footer { padding-block: 36px; font-size: var(--s1); color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; }
+footer .links { display: flex; gap: 18px; }
+footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
+
+/* Responsive */
+@media (max-width: 880px) {
+  .hero .wrap, .guide .wrap, .meet .wrap { grid-template-columns: 1fr; }
+  .hero-photo { max-width: 420px; margin-inline: auto; width: 100%; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .ph.wide2 { aspect-ratio: 2 / 1; height: auto; }
+  nav { order: 3; width: 100%; }
+}
+@media (max-width: 720px) {
+  .trio, .steps { grid-template-columns: 1fr; }
+  .trio p, .steps p { max-width: 65ch; }
+}
+@media (max-width: 560px) {
+  .versus, .halves { grid-template-columns: 1fr; }
+  .show { grid-template-columns: 1fr; gap: 4px; }
+  .fact-sheet div { grid-template-columns: 110px 1fr; }
+  .facts-strip { grid-template-columns: 1fr; }
+  .bubble { right: 4px; bottom: 20px; max-width: 170px; font-size: var(--s1); }
+  .flying-disc { width: 96px; height: 35px; left: -10px; top: -14px; }
+  .top .btn { display: none; }
+  nav ul { gap: 6px 16px; }
+  .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flying-disc { animation: none; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Amazon the Dog home"><span class="disc mini-disc" aria-hidden="true"></span>Amazon the Dog</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#story">Her story</a></li>
+        <li><a href="#meet">Meet Amazon</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pack">Join the pack</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog" target="_blank" rel="noopener">Follow</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- SB7 1–2: The hero (the visitor) and what they want -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Golden Retriever × German Shepherd · Est. Nov 3, 2024</p>
+        <h1><span>Shepherd strength.</span><span><span class="gold">Golden heart.</span></span></h1>
+        <p class="lede">Amazon is a big black shepherd mix who looks like a guard dog and loves like a golden. Gentle with kids. Serious about frisbee. Follow along and get a smile in your feed a few times a week.</p>
+        <div class="btns">
+          <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Follow on Instagram</a>
+          <a class="btn btn-fb" href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.7H8.8V13h2v6z" fill="var(--solid)"/></svg>
+            Follow on Facebook</a>
+        </div>
+        <p class="handle">@amazonthedog on both</p>
+      </div>
+      <div class="hero-photo">
+        <span class="disc flying-disc" aria-hidden="true"></span>
+        <figure class="frame">
+          <div class="ph"><picture><source type="image/avif" srcset="img/hero-400.avif 400w, img/hero-640.avif 640w, img/hero-900.avif 900w" sizes="(max-width: 880px) min(400px, calc(100vw - 52px)), (max-width: 1120px) 37vw, 420px"><source type="image/webp" srcset="img/hero-400.webp 400w, img/hero-640.webp 640w, img/hero-900.webp 900w" sizes="(max-width: 880px) min(400px, calc(100vw - 52px)), (max-width: 1120px) 37vw, 420px"><img src="img/hero-640.webp" width="900" height="1125" alt="Amazon, a black Golden Retriever and German Shepherd mix, sitting in the grass with a yak chew in her mouth and a blue bandana" fetchpriority="high"></picture></div>
+          <figcaption>On smile duty, chew in paw.</figcaption>
+        </figure>
+        <p class="bubble"><small>Amazon says</small>I have one job. The frisbee. I take it very seriously.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SB7 3: The problem (external, internal, philosophical) -->
+  <section class="section problem" style="padding-top: 24px;">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Why she's here</p>
+        <h2>Most of your feed doesn't make you feel better.</h2>
+        <p class="lede">And the big black dog at the park usually gets a wide berth. Amazon is out to fix both, one catch at a time.</p>
+      </div>
+      <div class="trio">
+        <div>
+          <h3>The scroll</h3>
+          <p>Five minutes in and you're more wound up than when you started. Bad news, hot takes, ads.</p>
+        </div>
+        <div>
+          <h3>The look</h3>
+          <p>People see a big black shepherd mix and cross the street. They miss the wagging tail.</p>
+        </div>
+        <div>
+          <h3>The question</h3>
+          <p>Families who want a big dog wonder if a gentle giant really exists, or just looks good in other people's photos.</p>
+        </div>
+      </div>
+      <p class="turn">Every dog deserves to be judged by her heart. <b>Amazon's job is to prove it.</b></p>
+    </div>
+  </section>
+
+  <!-- SB7 4: The guide (empathy + authority), told in Rob's voice -->
+  <section class="section band guide" id="story">
+    <div class="wrap">
+      <div class="guide-copy">
+        <p class="eyebrow">The story of Amazon</p>
+        <h2 class="h2">I named my dog after the most stressful thing in my life.</h2>
+        <p class="first">I spent seven years working with Amazon sellers. Every seller had a different problem, and every one of them made me want to pull my hair out. So when a four-month-old black puppy came home on March 1, 2025, the name was obvious.</p>
+        <p>She earned it fast. From March to May she raided the trash, had accidents in the house and ate the carpet.</p>
+        <p>Then she grew up. Today she's the calmest dog in our house, patient with kids and happiest with a frisbee in her mouth. That's the dog I want you to meet.</p>
+        <p class="sign">Rob, Amazon's dad</p>
+        <dl class="facts-strip">
+          <div><dt>Born</dt><dd>Nov 3, 2024</dd></div>
+          <div><dt>Home since</dt><dd>Mar 1, 2025</dd></div>
+          <div><dt>Carpets eaten</dt><dd>Retired from it</dd></div>
+        </dl>
+      </div>
+      <div class="thennow">
+        <figure class="frame">
+          <div class="ph"><picture><source type="image/avif" srcset="img/then-puppy-cart-400.avif 400w, img/then-puppy-cart-700.avif 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><source type="image/webp" srcset="img/then-puppy-cart-400.webp 400w, img/then-puppy-cart-700.webp 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><img src="img/then-puppy-cart-400.webp" width="700" height="875" alt="Amazon as a tiny black puppy riding in a store shopping cart" loading="lazy" decoding="async"></picture></div>
+          <figcaption>Then: small enough for a shopping cart.</figcaption>
+        </figure>
+        <figure class="frame">
+          <div class="ph"><picture><source type="image/avif" srcset="img/now-red-frisbee-400.avif 400w, img/now-red-frisbee-700.avif 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><source type="image/webp" srcset="img/now-red-frisbee-400.webp 400w, img/now-red-frisbee-700.webp 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><img src="img/now-red-frisbee-400.webp" width="700" height="875" alt="Grown-up Amazon by a pond, nosing her red frisbee in the grass" loading="lazy" decoding="async"></picture></div>
+          <figcaption>Now: all frisbee, all heart.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SB7 5: The plan -->
+  <section class="section plan">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">How it works</p>
+        <h2 class="h2">Your daily smile, in three steps.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Follow her</h3><p>Hit follow on Instagram or Facebook. She posts on both.</p></li>
+        <li><h3>Catch the catch</h3><p>Watch for Catch of the Day two or three times a week, slow motion included.</p></li>
+        <li><h3>Pass it on</h3><p>Send her to someone who needs a smile, or someone who's sure big dogs are scary.</p></li>
+      </ol>
+
+      <div class="lineup">
+        <h3 class="title">What's on</h3>
+        <div class="show"><span class="when">2–3× a week</span><div><h4>Catch of the Day</h4><p>Her best catch, replayed in slow motion.</p></div></div>
+        <div class="show"><span class="when">Weekly</span><div><h4>Smile Duty</h4><p>Greeting people, cheering up the kids, meeting Rob at the door after a long workday.</p></div></div>
+        <div class="show"><span class="when">Weekly</span><div><h4>Amazon Reviews</h4><p>She rates toys and frisbees out of five. First up: her yak chews.</p></div></div>
+        <div class="show"><span class="when">Thursdays</span><div><h4>Then vs Now</h4><p>From carpet-eating puppy to gentle guardian, one photo at a time.</p></div></div>
+        <div class="show"><span class="when">Weekly</span><div><h4>Shepherd Brain vs Golden Heart</h4><p>Her two halves argue it out. The golden usually wins.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Amazon: fact sheet + two breeds, one heart -->
+  <section class="section meet" id="meet" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="meet-left">
+        <p class="eyebrow">Meet Amazon</p>
+        <h2 class="h2">Two breeds. One big heart.</h2>
+        <dl class="fact-sheet">
+          <div><dt>Breed</dt><dd>Golden Retriever × German Shepherd, 50/50</dd></div>
+          <div><dt>Coat</dt><dd>Glossy solid black with golden-style feathering</dd></div>
+          <div><dt>Ears</dt><dd>Drop ears that fold forward, like a golden's</dd></div>
+          <div><dt>Eyes</dt><dd>Brown, amber in the sun</dd></div>
+          <div><dt>Loves</dt><dd>Frisbee, fetch, car rides, snow, yak chews</dd></div>
+          <div><dt>Job</dt><dd>Smile duty, full time</dd></div>
+        </dl>
+      </div>
+      <div class="halves">
+        <div class="half shepherd">
+          <span class="tag">Shepherd brain</span>
+          <h3>Looks the part</h3>
+          <ul>
+            <li>Lean, athletic, built to run</li>
+            <li>Tracks every throw before it leaves your hand</li>
+            <li>Keeps an eye on the whole yard</li>
+          </ul>
+        </div>
+        <div class="half golden">
+          <span class="tag">Golden heart</span>
+          <h3>Acts the part</h3>
+          <ul>
+            <li>Super sweet and patient with kids</li>
+            <li>Big sister to Rob's daughter</li>
+            <li>Thinks every visitor came to see her</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section gallery" id="gallery" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="head">
+        <div style="display:grid; gap:12px;">
+          <p class="eyebrow">Gallery</p>
+          <h2 class="h2">A few favorites.</h2>
+        </div>
+        <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog" target="_blank" rel="noopener">See more on Instagram</a>
+      </div>
+      <div class="grid">
+        <figure class="frame span2"><div class="ph wide2"><picture><source type="image/avif" srcset="img/gallery-golden-hour-700.avif 700w, img/gallery-golden-hour-1000.avif 1000w, img/gallery-golden-hour-1400.avif 1400w" sizes="(max-width: 880px) calc(100vw - 52px), (max-width: 1120px) calc(66vw - 30px), 700px"><source type="image/webp" srcset="img/gallery-golden-hour-700.webp 700w, img/gallery-golden-hour-1000.webp 1000w, img/gallery-golden-hour-1400.webp 1400w" sizes="(max-width: 880px) calc(100vw - 52px), (max-width: 1120px) calc(66vw - 30px), 700px"><img src="img/gallery-golden-hour-1000.webp" width="1400" height="700" alt="Amazon stretched out in the grass at golden hour, tongue out" loading="lazy" decoding="async"></picture></div><figcaption>Golden hour, tongue out.</figcaption></figure>
+                <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-blue-frisbee-400.avif 400w, img/gallery-blue-frisbee-600.avif 600w, img/gallery-blue-frisbee-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-blue-frisbee-400.webp 400w, img/gallery-blue-frisbee-600.webp 600w, img/gallery-blue-frisbee-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-blue-frisbee-600.webp" width="800" height="800" alt="Amazon carrying a blue frisbee down a gravel lane" loading="lazy" decoding="async"></picture></div><figcaption>Blue frisbee, locked in.</figcaption></figure>
+        <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-store-counter-400.avif 400w, img/gallery-store-counter-600.avif 600w, img/gallery-store-counter-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-store-counter-400.webp 400w, img/gallery-store-counter-600.webp 600w, img/gallery-store-counter-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-store-counter-600.webp" width="800" height="800" alt="Amazon with her paws up on a store checkout counter, smiling" loading="lazy" decoding="async"></picture></div><figcaption>Checking out. She greets every cashier.</figcaption></figure>
+        <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-car-ride-400.avif 400w, img/gallery-car-ride-600.avif 600w, img/gallery-car-ride-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-car-ride-400.webp 400w, img/gallery-car-ride-600.webp 600w, img/gallery-car-ride-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-car-ride-600.webp" width="800" height="800" alt="Amazon looking out of a car window" loading="lazy" decoding="async"></picture></div><figcaption>Shotgun, always.</figcaption></figure>
+                <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-the-look-400.avif 400w, img/gallery-the-look-600.avif 600w, img/gallery-the-look-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-the-look-400.webp 400w, img/gallery-the-look-600.webp 600w, img/gallery-the-look-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-the-look-600.webp" width="800" height="800" alt="Amazon sitting on the carpet, looking up at the camera" loading="lazy" decoding="async"></picture></div><figcaption>The look that gets her anything.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SB7 6–7: Failure vs success (the stakes) -->
+  <section class="section stakes" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="h2">Your feed, two ways.</h2>
+      <div class="versus">
+        <div class="without">
+          <h3>Without Amazon</h3>
+          <ul>
+            <li>The same scroll, the same stress.</li>
+            <li>Big black dogs stay something to walk around.</li>
+            <li>You never see the catch everyone's talking about.</li>
+          </ul>
+        </div>
+        <div class="with">
+          <h3>With Amazon</h3>
+          <ul>
+            <li>A smile in three seconds, a few times a week.</li>
+            <li>Proof a big dog can be the gentlest one in the room.</li>
+            <li>A real family's dog to cheer for, from puppy chaos to gentle guardian.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SB7 CTA: direct (follow) first, transitional (email) second -->
+  <section class="section band pack" id="pack">
+    <picture><source media="(min-width: 881px)" type="image/avif" srcset="img/cutout-400.avif 400w, img/cutout-700.avif 700w" sizes="min(34vw, 400px)"><source media="(min-width: 881px)" type="image/webp" srcset="img/cutout-400.webp 400w, img/cutout-700.webp 700w" sizes="min(34vw, 400px)"><img class="pack-dog" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="700" height="940" alt="" loading="lazy" decoding="async"></picture>
+    <div class="wrap">
+      <p class="eyebrow">Join the pack</p>
+      <h2>Come see the catch.</h2>
+      <p class="tagline2">Delivering same-day smiles, not packages.</p>
+      <div class="btns">
+        <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Follow on Instagram</a>
+        <a class="btn btn-fb" href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.7H8.8V13h2v6z" fill="var(--on-band)"/></svg>
+          Follow on Facebook</a>
+      </div>
+      <p class="handle">@amazonthedog</p>
+      <div class="mail">
+        <h3 style="font-size: var(--s4);">Prefer email?</h3>
+        <p>Get the Pack Letter once a month, plus a free phone wallpaper of Amazon.</p>
+        <form id="pack-form" novalidate>
+          <label for="pack-email">Email address</label>
+          <input id="pack-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          <button class="btn" type="submit">Send my wallpaper</button>
+        </form>
+        <p class="note" id="pack-note" role="status"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Amazon the Dog · Shepherd strength. Golden heart.</span>
+    <span class="links">
+      <a href="https://www.instagram.com/amazonthedog" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">Facebook</a>
+    </span>
+    <span>A family dog. Not affiliated with Amazon.com, Inc.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById('pack-form');
+    var input = document.getElementById('pack-email');
+    var note = document.getElementById('pack-note');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+        note.textContent = 'Enter a full email address, like you@example.com.';
+        input.focus();
+        return;
+      }
+      note.textContent = 'Email signup opens at launch. Follow on Instagram so you don\'t miss it.';
+    });
+  })();
+</script>
+</body>
+</html>
