@@ -43,6 +43,13 @@ async function findMediaUrl(fields) {
   if (process.env.IG_API_BASE) tries.push(["test server", async () => `${process.env.IG_API_BASE}/me/media`]);
   tries.push(
     ["Instagram API (/me)", async () => { await getJson(`https://graph.instagram.com/me?fields=user_id,username&${t}`); return "https://graph.instagram.com/me/media"; }],
+    ["Business system user", async () => {
+      const acc = await getJson(`${FB}/me/assigned_instagram_accounts?fields=id,username&limit=100&${t}`);
+      const list = acc.data || [];
+      const match = list.find((a) => a.username === IG_USERNAME) || list[0];
+      if (!match) throw new Error("no Instagram account assigned to this system user yet");
+      return `${FB}/${match.id}/media`;
+    }],
     ["Facebook Pages", async () => {
       const pages = await getJson(`${FB}/me/accounts?fields=instagram_business_account{id,username}&limit=100&${t}`);
       const ig = (pages.data || []).map((p) => p.instagram_business_account).filter(Boolean);
