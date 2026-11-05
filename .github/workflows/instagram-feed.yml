@@ -33,6 +33,11 @@ jobs:
             exit 0
           fi
           token="$IG_TOKEN"
+          if [ "${IG_TOKEN#IG}" = "$IG_TOKEN" ]; then
+            echo "Using a Meta Unified Login token (doesn't need refreshing)."
+            echo "IG_ACCESS=$token" >> "$GITHUB_ENV"
+            exit 0
+          fi
           if resp=$(curl -fsS --get "https://graph.instagram.com/refresh_access_token" \
                 --data-urlencode "grant_type=ig_refresh_token" --data-urlencode "access_token=$IG_TOKEN"); then
             new=$(echo "$resp" | jq -r '.access_token // empty')
