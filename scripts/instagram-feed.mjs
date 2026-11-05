@@ -8,8 +8,13 @@ import sharp from "sharp";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const PAGE = path.join(ROOT, "index.html");
 const IMG_DIR = path.join(ROOT, "img", "ig");
-const API = process.env.IG_API_BASE || "https://graph.instagram.com";
 const TOKEN = process.env.IG_ACCESS;
+// "IG..." tokens come from Instagram Login (graph.instagram.com, /me works).
+// "EAA..." tokens come from Meta's Unified Login (graph.facebook.com, needs the Instagram account ID).
+const IG_LOGIN_TOKEN = String(TOKEN || "").startsWith("IG");
+const IG_USER_ID = process.env.IG_USER_ID || "17841473158483651"; // @amazonthedog__
+const API = process.env.IG_API_BASE || (IG_LOGIN_TOKEN ? "https://graph.instagram.com" : "https://graph.facebook.com/v23.0");
+const MEDIA_PATH = IG_LOGIN_TOKEN ? "me/media" : `${IG_USER_ID}/media`;
 const COUNT = Number(process.env.IG_COUNT || 9);
 const PROFILE = "https://www.instagram.com/amazonthedog__";
 const START = "<!-- IG-FEED:START -->";
@@ -28,7 +33,7 @@ function snippet(caption, max) {
 
 async function getPosts() {
   const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
-  const url = `${API}/me/media?fields=${fields}&limit=25&access_token=${encodeURIComponent(TOKEN)}`;
+  const url = `${API}/${MEDIA_PATH}?fields=${fields}&limit=25&access_token=${encodeURIComponent(TOKEN)}`;
   const res = await fetch(url);
   const body = await res.json().catch(() => ({}));
   if (!res.ok || body.error) {
