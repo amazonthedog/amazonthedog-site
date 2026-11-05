@@ -9,12 +9,9 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const PAGE = path.join(ROOT, "index.html");
 const IMG_DIR = path.join(ROOT, "img", "ig");
 const TOKEN = process.env.IG_ACCESS;
-// "IG..." tokens come from Instagram Login (graph.instagram.com, /me works).
-// "EAA..." tokens come from Meta's Unified Login (graph.facebook.com, needs the Instagram account ID).
-const IG_LOGIN_TOKEN = String(TOKEN || "").startsWith("IG");
-const IG_USER_ID = process.env.IG_USER_ID || "17841473158483651"; // @amazonthedog__
-const API = process.env.IG_API_BASE || (IG_LOGIN_TOKEN ? "https://graph.instagram.com" : "https://graph.facebook.com/v23.0");
-const MEDIA_PATH = IG_LOGIN_TOKEN ? "me/media" : `${IG_USER_ID}/media`;
+const IG_USERNAME = "amazonthedog__";
+const IG_USER_ID = process.env.IG_USER_ID || "17841473158483651";
+const FB = "https://graph.facebook.com/v23.0";
 const COUNT = Number(process.env.IG_COUNT || 9);
 const PROFILE = "https://www.instagram.com/amazonthedog__";
 const START = "<!-- IG-FEED:START -->";
@@ -31,14 +28,42 @@ function snippet(caption, max) {
   return text.slice(0, max).replace(/\s+\S*$/, "") + "…";
 }
 
-async function getPosts() {
-  const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
-  const url = `${API}/${MEDIA_PATH}?fields=${fields}&limit=25&access_token=${encodeURIComponent(TOKEN)}`;
+async function getJson(url) {
   const res = await fetch(url);
   const body = await res.json().catch(() => ({}));
-  if (!res.ok || body.error) {
-    throw new Error(`Instagram API ${res.status}: ${body.error?.message || "unknown error"}`);
+  if (!res.ok || body.error) throw new Error(`${res.status}: ${body.error?.message || "unknown error"}`);
+  return body;
+}
+
+// Meta hands out different kinds of tokens depending on how the app was set up,
+// so try each way of reaching @amazonthedog__'s posts until one works.
+async function findMediaUrl(fields) {
+  const t = `access_token=${encodeURIComponent(TOKEN)}`;
+  const tries = [];
+  if (process.env.IG_API_BASE) tries.push(["test server", async () => `${process.env.IG_API_BASE}/me/media`]);
+  tries.push(
+    ["Instagram API (/me)", async () => { await getJson(`https://graph.instagram.com/me?fields=user_id,username&${t}`); return "https://graph.instagram.com/me/media"; }],
+    ["Facebook Pages", async () => {
+      const pages = await getJson(`${FB}/me/accounts?fields=instagram_business_account{id,username}&limit=100&${t}`);
+      const ig = (pages.data || []).map((p) => p.instagram_business_account).filter(Boolean);
+      const match = ig.find((a) => a.username === IG_USERNAME) || ig[0];
+      if (!match) throw new Error("no Instagram account linked to the Pages this token can see");
+      return `${FB}/${match.id}/media`;
+    }],
+    ["Facebook (/me as Instagram)", async () => { const me = await getJson(`${FB}/me?fields=id,username&${t}`); if (!me.username) throw new Error("not an Instagram account"); return `${FB}/${me.id}/media`; }],
+    ["Facebook (account ID)", async () => { await getJson(`${FB}/${IG_USER_ID}?fields=id,username&${t}`); return `${FB}/${IG_USER_ID}/media`; }],
+  );
+  const errors = [];
+  for (const [name, fn] of tries) {
+    try { const base = await fn(); console.log(`Reading posts via ${name}`); return `${base}?fields=${fields}&limit=25&${t}`; }
+    catch (e) { errors.push(`${name}: ${e.message}`); }
   }
+  throw new Error("Couldn't reach the Instagram account:\n  " + errors.join("\n  "));
+}
+
+async function getPosts() {
+  const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
+  const body = await getJson(await findMediaUrl(fields));
   return (body.data || [])
     .map((p) => ({ ...p, image: p.media_type === "VIDEO" ? p.thumbnail_url : p.media_url }))
     .filter((p) => p.image && p.permalink)
