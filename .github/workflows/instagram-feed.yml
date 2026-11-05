@@ -1,0 +1,87 @@
+name: Instagram feed
+
+# Pulls Amazon's latest Instagram posts into the "Fresh from Instagram" section.
+# Secrets: IG_TOKEN (Instagram long-lived token), GH_PAT (fine-grained token, this repo, Secrets: read & write)
+on:
+  schedule:
+    - cron: "23 */4 * * *"   # every 4 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: instagram-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh Instagram token
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ -z "$IG_TOKEN" ]; then
+            echo "::warning::The IG_TOKEN secret isn't set yet, so there's nothing to update. Add it under Settings > Secrets and variables > Actions."
+            echo "IG_SKIP=1" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          token="$IG_TOKEN"
+          if resp=$(curl -fsS --get "https://graph.instagram.com/refresh_access_token" \
+                --data-urlencode "grant_type=ig_refresh_token" --data-urlencode "access_token=$IG_TOKEN"); then
+            new=$(echo "$resp" | jq -r '.access_token // empty')
+            days=$(echo "$resp" | jq -r '((.expires_in // 0) / 86400) | floor')
+            if [ -n "$new" ]; then
+              echo "::add-mask::$new"
+              token="$new"
+              echo "Token refreshed, good for about $days more days."
+              if [ "$new" != "$IG_TOKEN" ]; then
+                if [ -n "$GH_PAT" ]; then
+                  GH_TOKEN="$GH_PAT" gh secret set IG_TOKEN --repo "$REPO" --body "$new" && echo "Saved the refreshed token."
+                else
+                  echo "::warning::Instagram issued a new token but GH_PAT is missing, so it could not be saved."
+                fi
+              fi
+            fi
+          else
+            echo "::warning::Token refresh skipped (normal for a token less than 24 hours old)."
+          fi
+          echo "IG_ACCESS=$token" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v4
+        if: env.IG_SKIP != '1'
+        with:
+          node-version: 20
+
+      - name: Install image tools
+        if: env.IG_SKIP != '1'
+        run: npm install --no-save --no-package-lock --silent sharp@0.33
+
+      - name: Update the feed
+        if: env.IG_SKIP != '1'
+        run: node scripts/instagram-feed.mjs
+
+      - name: Publish changes
+        if: env.IG_SKIP != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          git add index.html img/ig
+          if git diff --cached --quiet; then
+            echo "No new posts."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Instagram feed"
+          git push
+          gh api -X POST "repos/$REPO/pages/builds" > /dev/null \
+            && echo "Site rebuild requested." \
+            || echo "::warning::Could not request a Pages rebuild; it should still deploy from the push."
