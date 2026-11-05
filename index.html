@@ -264,14 +264,6 @@ nav a:hover { color: var(--ink); }
 .pack .wrap { display: grid; gap: 28px; }
 .pack h2 { font-size: var(--s6); font-weight: 700; }
 .tagline2 { font-family: var(--display); font-size: var(--s4); color: var(--gold); }
-.mail { margin-top: 12px; padding-top: 28px; border-top: 1px solid color-mix(in srgb, var(--on-band) 25%, transparent); display: grid; gap: 12px; max-width: 560px; }
-.mail p { color: var(--on-band-muted); }
-.mail form { display: flex; gap: 10px; flex-wrap: wrap; }
-.mail label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.mail input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 13px 16px; border-radius: 999px; border: 2px solid color-mix(in srgb, var(--on-band) 35%, transparent); background: color-mix(in srgb, var(--on-band) 8%, transparent); color: var(--on-band); }
-.mail input::placeholder { color: var(--on-band-muted); }
-.mail .btn { font-size: var(--s2); padding: 12px 20px; background: var(--gold); color: #141414; }
-.mail .note { font-size: var(--s1); color: var(--on-band); min-height: 1.4em; }
 
 /* Footer */
 footer { padding-block: 36px; font-size: var(--s1); color: var(--muted); }
@@ -590,7 +582,7 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
     </div>
   </section>
 
-  <!-- SB7 CTA: direct (follow) first, transitional (email) second -->
+  <!-- SB7 CTA: follow -->
   <section class="section band pack" id="pack">
     <picture><source media="(min-width: 881px)" type="image/avif" srcset="img/cutout-400.avif 400w, img/cutout-700.avif 700w" sizes="min(34vw, 400px)"><source media="(min-width: 881px)" type="image/webp" srcset="img/cutout-400.webp 400w, img/cutout-700.webp 700w" sizes="min(34vw, 400px)"><img class="pack-dog" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="700" height="940" alt="" loading="lazy" decoding="async"></picture>
     <div class="wrap">
@@ -617,16 +609,6 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
           Snapchat</a>
       </div>
       <p class="handle">@amazonthedog</p>
-      <div class="mail">
-        <h3 style="font-size: var(--s4);">Prefer email?</h3>
-        <p>Get the Pack Letter once a month, plus a free phone wallpaper of Amazon.</p>
-        <form id="pack-form" novalidate>
-          <label for="pack-email">Email address</label>
-          <input id="pack-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
-          <button class="btn" type="submit">Send my wallpaper</button>
-        </form>
-        <p class="note" id="pack-note" role="status"></p>
-      </div>
     </div>
   </section>
 </main>
@@ -645,22 +627,5 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
   </div>
 </footer>
 
-<script>
-  (function () {
-    var form = document.getElementById('pack-form');
-    var input = document.getElementById('pack-email');
-    var note = document.getElementById('pack-note');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var v = input.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
-        note.textContent = 'Enter a full email address, like you@example.com.';
-        input.focus();
-        return;
-      }
-      note.textContent = 'Email signup opens at launch. Follow on Instagram so you don\'t miss it.';
-    });
-  })();
-</script>
 </body>
 </html>
