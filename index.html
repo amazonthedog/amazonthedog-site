@@ -107,6 +107,12 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .btn-ig { background: var(--teal-strong); color: var(--on-teal); box-shadow: 0 6px 0 -2px color-mix(in srgb, var(--teal-strong) 45%, transparent); }
 .btn-fb { background: var(--solid); color: var(--on-solid); }
 .band .btn-fb { background: var(--on-band); color: var(--band); }
+.btns-more { margin-top: 12px; gap: 10px; }
+.btn-alt { font-size: var(--s2); padding: 10px 18px; background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.btn-alt:hover { box-shadow: inset 0 0 0 2px var(--teal); }
+.btn-alt svg { width: 18px; height: 18px; }
+.band .btn-alt { color: var(--on-band); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--on-band) 45%, transparent); }
+.band .btn-alt:hover { box-shadow: inset 0 0 0 2px var(--on-band); }
 .handle { font-size: var(--s1); color: var(--muted); }
 .band .handle { color: var(--on-band-muted); }
 
@@ -255,7 +261,7 @@ nav a:hover { color: var(--ink); }
 /* Footer */
 footer { padding-block: 36px; font-size: var(--s1); color: var(--muted); }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; }
-footer .links { display: flex; gap: 18px; }
+footer .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
 
 /* Responsive */
@@ -280,6 +286,8 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
   .top .btn { display: none; }
   nav ul { gap: 6px 16px; }
   .btn { width: 100%; justify-content: center; }
+  .btns-more { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .btn-alt { width: auto; padding: 10px 8px; gap: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .flying-disc { animation: none; }
@@ -321,7 +329,18 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.7H8.8V13h2v6z" fill="var(--solid)"/></svg>
             Follow on Facebook</a>
         </div>
-        <p class="handle">@amazonthedog__ on Instagram · @amazonthedog on Facebook</p>
+        <div class="btns btns-more" aria-label="More places to follow Amazon">
+          <a class="btn btn-alt" href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V15a6 6 0 1 1-6-6h.5v3.2A3 3 0 1 0 14 15z"/></svg>
+            TikTok</a>
+          <a class="btn btn-alt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg>
+            YouTube</a>
+          <a class="btn btn-alt" href="https://www.snapchat.com/add/amazonthedog" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c3 0 5 2.2 5 5.2v2.3l1.6-.5c.6-.2 1 .6.4 1l-1.8 1c.6 1.6 1.9 2.8 3.4 3.3.5.2.4.9-.1 1-1 .3-1.6.5-1.8 1.4-1.2-.1-2.3.1-3.4.9-.7.5-1.4.9-3.3.9s-2.6-.4-3.3-.9c-1.1-.8-2.2-1-3.4-.9-.2-.9-.8-1.1-1.8-1.4-.5-.1-.6-.8-.1-1 1.5-.5 2.8-1.7 3.4-3.3l-1.8-1c-.6-.4-.2-1.2.4-1l1.6.5V8.2C7 5.2 9 3 12 3z"/></svg>
+            Snapchat</a>
+        </div>
+        <p class="handle">@amazonthedog__ on Instagram · @amazonthedog on Facebook, TikTok &amp; Snapchat</p>
       </div>
       <div class="hero-photo">
         <span class="disc flying-disc" aria-hidden="true"></span>
@@ -511,6 +530,17 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.7H8.8V13h2v6z" fill="var(--on-band)"/></svg>
           Follow on Facebook</a>
       </div>
+      <div class="btns btns-more" aria-label="More places to follow Amazon">
+        <a class="btn btn-alt" href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V15a6 6 0 1 1-6-6h.5v3.2A3 3 0 1 0 14 15z"/></svg>
+          TikTok</a>
+        <a class="btn btn-alt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg>
+          YouTube</a>
+        <a class="btn btn-alt" href="https://www.snapchat.com/add/amazonthedog" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c3 0 5 2.2 5 5.2v2.3l1.6-.5c.6-.2 1 .6.4 1l-1.8 1c.6 1.6 1.9 2.8 3.4 3.3.5.2.4.9-.1 1-1 .3-1.6.5-1.8 1.4-1.2-.1-2.3.1-3.4.9-.7.5-1.4.9-3.3.9s-2.6-.4-3.3-.9c-1.1-.8-2.2-1-3.4-.9-.2-.9-.8-1.1-1.8-1.4-.5-.1-.6-.8-.1-1 1.5-.5 2.8-1.7 3.4-3.3l-1.8-1c-.6-.4-.2-1.2.4-1l1.6.5V8.2C7 5.2 9 3 12 3z"/></svg>
+          Snapchat</a>
+      </div>
       <p class="handle">@amazonthedog</p>
       <div class="mail">
         <h3 style="font-size: var(--s4);">Prefer email?</h3>
@@ -532,6 +562,9 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
     <span class="links">
       <a href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.snapchat.com/add/amazonthedog" target="_blank" rel="noopener">Snapchat</a>
     </span>
     <span>A family dog. Not affiliated with Amazon.com, Inc.</span>
   </div>
