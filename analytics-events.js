@@ -1,7 +1,7 @@
 /*
  * amazonthedog.com — GA4 event tracking
- * Sends follow_click, reel_click and section_view to GA4. Needs the Google tag (gtag.js) in <head>.
- * No personal data is sent.
+ * Sends follow_click, reel_click, short_click, book_click, calendar_click, invite_click and
+ * section_view to GA4. Needs the Google tag (gtag.js) in <head>. No personal data is sent.
  */
 (function () {
   if (typeof window.gtag !== 'function') return;
@@ -11,7 +11,8 @@
     'facebook.com': 'facebook',
     'tiktok.com': 'tiktok',
     'youtube.com': 'youtube',
-    'snapchat.com': 'snapchat'
+    'snapchat.com': 'snapchat',
+    'linkedin.com': 'linkedin'
   };
 
   // Where on the page an element sits: header, footer, or the section's id / name class
@@ -22,34 +23,57 @@
     if (!s) return 'other';
     return s.id || s.classList[1] || s.classList[0] || 'section';
   }
+  function textOf(a) { return (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60); }
 
-  // Follow buttons and Instagram reel tiles
   document.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a[href]') : null;
     if (!a) return;
     var url;
     try { url = new URL(a.href, window.location.href); } catch (err) { return; }
-    var platform = PLATFORMS[url.hostname.replace(/^www\./, '')];
+    var host = url.hostname.replace(/^www\./, '');
+
+    // The Christmas book (Gumroad checkout: free download or name-your-price)
+    if (/(^|\.)gumroad\.com$/.test(host) || a.hasAttribute('data-book')) {
+      window.gtag('event', 'book_click', { button_location: placeOf(a), button_text: textOf(a) });
+      return;
+    }
+    // Calendar: follow her whole calendar, or add one event
+    if (url.protocol === 'webcal:' || host === 'calendar.google.com') {
+      var kind = url.protocol === 'webcal:' || url.searchParams.get('cid') ? 'subscribe' : 'add_event';
+      window.gtag('event', 'calendar_click', { kind: kind, button_location: placeOf(a) });
+      return;
+    }
+    // "Invite Amazon": a direct message on Instagram
+    if (host === 'ig.me') {
+      window.gtag('event', 'invite_click', { button_location: placeOf(a), button_text: textOf(a) });
+      return;
+    }
+
+    var platform = PLATFORMS[host];
     if (!platform) return;
 
     var reel = url.pathname.match(/^\/(?:reel|p)\/([^\/]+)/);
     if (reel) {
       var tiles = Array.prototype.slice.call(document.querySelectorAll('a.ig-tile'));
-      window.gtag('event', 'reel_click', {
-        reel_id: reel[1],
-        position: tiles.indexOf(a) + 1
-      });
+      window.gtag('event', 'reel_click', { reel_id: reel[1], position: tiles.indexOf(a) + 1 });
+      return;
+    }
+
+    var short = platform === 'youtube' && url.pathname.match(/^\/shorts\/([^\/?]+)/);
+    if (short) {
+      var shorts = Array.prototype.slice.call(document.querySelectorAll('a.yt-tile'));
+      window.gtag('event', 'short_click', { short_id: short[1], position: shorts.indexOf(a) + 1 });
       return;
     }
 
     window.gtag('event', 'follow_click', {
       platform: platform,
       button_location: placeOf(a),
-      button_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+      button_text: textOf(a)
     });
   });
 
-  // How far down the story people get: one section_view per section per page load
+  // How far down the page people get: one section_view per section per page load
   if ('IntersectionObserver' in window) {
     var seen = {};
     var io = new IntersectionObserver(function (entries) {

@@ -18,8 +18,8 @@
   gtag('js', new Date());
   gtag('config', 'G-HXVWFMXMJ2');
 </script>
-<title>Amazon the Dog</title>
-<meta name="description" content="Amazon the Dog is a black Golden Retriever and German Shepherd mix who proves big dogs can have the softest hearts. Follow on Instagram and Facebook.">
+<title>Amazon the Dog · Same-day smiles. $0 delivery fee.</title>
+<meta name="description" content="Amazon the Dog is a gentle black golden shepherd on a mission to record 1,000,000 smiles. See where she'll be next, get her Christmas book, and follow along on every app.">
 <link rel="canonical" href="https://amazonthedog.com/">
 <meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
@@ -31,16 +31,16 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Amazon the Dog">
-<meta property="og:title" content="Amazon the Dog">
-<meta property="og:description" content="Amazon the Dog is a black Golden Retriever and German Shepherd mix who proves big dogs can have the softest hearts. Follow on Instagram and Facebook.">
+<meta property="og:title" content="Amazon the Dog · Same-day smiles. $0 delivery fee.">
+<meta property="og:description" content="A gentle black golden shepherd on a mission to record 1,000,000 smiles. See where she'll be next, get her Christmas book, and follow along.">
 <meta property="og:url" content="https://amazonthedog.com/">
 <meta property="og:image" content="https://amazonthedog.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Amazon, a black Golden Retriever and German Shepherd mix, with the words Shepherd strength. Golden heart.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Amazon the Dog">
-<meta name="twitter:description" content="Amazon the Dog is a black Golden Retriever and German Shepherd mix who proves big dogs can have the softest hearts. Follow on Instagram and Facebook.">
+<meta name="twitter:title" content="Amazon the Dog · Same-day smiles. $0 delivery fee.">
+<meta name="twitter:description" content="A gentle black golden shepherd on a mission to record 1,000,000 smiles. See where she'll be next, get her Christmas book, and follow along.">
 <meta name="twitter:image" content="https://amazonthedog.com/og-image.jpg">
 <meta name="twitter:image:alt" content="Amazon, a black Golden Retriever and German Shepherd mix, with the words Shepherd strength. Golden heart.">
 <style>
@@ -51,7 +51,8 @@
 @font-face { font-family: "Fredoka Fallback"; font-weight: 600 700; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"); size-adjust: 93.4%; ascent-override: 104.3%; descent-override: 25.3%; line-gap-override: 0%; }
 @font-face { font-family: "Inter Fallback"; src: local("Arial"), local("ArialMT"), local("Liberation Sans"); size-adjust: 106.23%; ascent-override: 91.22%; descent-override: 22.78%; line-gap-override: 0%; }
 /* Layout: a backyard catch. Wide cream field, a teal frisbee in flight across the hero,
-   story sections alternate cream and field-green bands, SB7 order top to bottom. */
+   sections alternate cream and field-green bands. Order: promise, mission, what she does,
+   where she'll be, her book, follow along, her story. */
 :root {
   --bg: #F6F1E7;          /* Warm Cream */
   --surface: #FFFBF3;
@@ -68,6 +69,8 @@
   --gold: #E3B23C;        /* Golden Heart, small accents */
   --gold-on-band: #F5D98A; /* small gold text on the green band (4.6:1) */
   --pink: #E8457A;        /* Gear Pink */
+  --pink-strong: #C4295E; /* pink for text on cream (4.9:1) */
+  --snow: #EAF4F4;        /* the book band: a cold, bright cream */
   --photo-a: #2A2D2A;
   --photo-b: #121312;
   --solid: #141414;
@@ -84,7 +87,8 @@
     --bg: #121412; --surface: #1A1E1B; --ink: #F3EEE3; --muted: #B6AFA2; --line: #2C322D;
     --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414;
     --green: #7DBB8C; --band: #1C3424; --on-band: #F3EEE3; --on-band-muted: #A9C7AF;
-    --gold: #EBC15A; --gold-on-band: #EBC15A; --pink: #F06A95; --photo-a: #2F3430; --photo-b: #1A1D1A;
+    --gold: #EBC15A; --gold-on-band: #EBC15A; --pink: #F06A95; --pink-strong: #F488AB; --snow: #142022;
+    --photo-a: #2F3430; --photo-b: #1A1D1A;
     --solid: #F3EEE3; --on-solid: #121412;
     color-scheme: dark;
   }
@@ -93,18 +97,20 @@
   --bg: #121412; --surface: #1A1E1B; --ink: #F3EEE3; --muted: #B6AFA2; --line: #2C322D;
   --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414;
   --green: #7DBB8C; --band: #1C3424; --on-band: #F3EEE3; --on-band-muted: #A9C7AF;
-  --gold: #EBC15A; --gold-on-band: #EBC15A; --pink: #F06A95; --photo-a: #2F3430; --photo-b: #1A1D1A;
+  --gold: #EBC15A; --gold-on-band: #EBC15A; --pink: #F06A95; --pink-strong: #F488AB; --snow: #142022;
+  --photo-a: #2F3430; --photo-b: #1A1D1A;
   --solid: #F3EEE3; --on-solid: #121412;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--s2); line-height: 1.6; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--s2); line-height: 1.6; overflow-x: hidden; }
 h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
 p { margin: 0; }
 a { color: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+[id] { scroll-margin-top: 16px; }
 
 .wrap { max-width: 1120px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .section { padding-block: clamp(56px, 9vw, 112px); }
@@ -113,6 +119,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .band .eyebrow { color: var(--gold-on-band); }
 .lede { font-size: var(--s3); color: var(--muted); max-width: 60ch; }
 .band .lede { color: var(--on-band-muted); }
+.h2 { font-size: var(--s5); }
+.head { display: grid; gap: 14px; margin-bottom: 36px; }
+.head-row { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.head-row > div { display: grid; gap: 12px; }
 
 /* Buttons */
 .btns { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -120,8 +130,11 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .btn:hover { transform: translateY(-2px); }
 .btn svg { width: 20px; height: 20px; flex: none; }
 .btn-ig { background: var(--teal-strong); color: var(--on-teal); box-shadow: 0 6px 0 -2px color-mix(in srgb, var(--teal-strong) 45%, transparent); }
-.btn-fb { background: var(--solid); color: var(--on-solid); }
-.band .btn-fb { background: var(--on-band); color: var(--band); }
+.btn-fb, .btn-yt { background: var(--solid); color: var(--on-solid); }
+.band .btn-fb, .band .btn-yt { background: var(--on-band); color: var(--band); }
+.btn-pink { background: var(--pink-strong); color: #fff; box-shadow: 0 6px 0 -2px color-mix(in srgb, var(--pink-strong) 45%, transparent); }
+:root[data-theme="dark"] .btn-pink { color: #1A0B11; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-pink { color: #1A0B11; } }
 .btns-more { margin-top: 12px; gap: 10px; }
 .btn-alt { font-size: var(--s2); padding: 10px 18px; background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
 .btn-alt:hover { box-shadow: inset 0 0 0 2px var(--teal); }
@@ -136,9 +149,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.3rem; text-decoration: none; }
 .mark .mini-disc { width: 30px; height: 12px; }
-nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
-nav a { text-decoration: none; font-weight: 500; font-size: var(--s1); color: var(--muted); }
-nav a:hover { color: var(--ink); }
+.top nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
+.top nav a { text-decoration: none; font-weight: 500; font-size: var(--s1); color: var(--muted); }
+.top nav a:hover { color: var(--ink); }
 
 /* Frisbee drawn in CSS: concentric rings on a flattened disc */
 .disc { border-radius: 50%; background:
@@ -150,10 +163,9 @@ nav a:hover { color: var(--ink); }
 .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
 .hero-copy { display: grid; gap: 22px; min-width: 0; }
 .hero h1 { font-size: var(--s6); font-weight: 700; }
-.hero h1 .gold { position: relative; white-space: nowrap; }
-.hero h1 .gold::after { content: ""; position: absolute; left: 2%; right: 2%; bottom: 0.04em; height: 0.18em; background: var(--gold); border-radius: 999px; z-index: -1; opacity: .85; }
 .hero h1 span { display: block; position: relative; z-index: 0; }
-.hero h1 .gold { display: inline-block; }
+.hero h1 .gold { display: inline-block; position: relative; white-space: nowrap; }
+.hero h1 .gold::after { content: ""; position: absolute; left: 2%; right: 2%; bottom: 0.04em; height: 0.18em; background: var(--gold); border-radius: 999px; z-index: -1; opacity: .85; }
 .hero-photo { position: relative; min-width: 0; }
 .hero-photo .frame { transform: rotate(2.5deg); }
 .flying-disc { position: absolute; width: 132px; height: 48px; top: -18px; left: -46px; transform: rotate(-14deg); animation: fly 1.4s cubic-bezier(.2,.7,.25,1) .2s both; z-index: 2; }
@@ -161,37 +173,146 @@ nav a:hover { color: var(--ink); }
 .bubble { position: absolute; right: -8px; bottom: 34px; background: var(--surface); color: var(--ink); border: 2px solid var(--ink); border-radius: 18px 18px 4px 18px; padding: 10px 14px; font-family: var(--display); font-weight: 500; font-size: var(--s2); line-height: 1.3; max-width: 210px; box-shadow: 4px 4px 0 var(--ink); z-index: 2; }
 .bubble small { display: block; font-family: var(--body); font-size: 0.72rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 2px; }
 
-/* Photo slots: swap the gradient for her real photo at launch */
+/* The smile count, small (hero) and big (mission band) */
+.count-card { display: grid; gap: 10px; text-decoration: none; background: var(--surface); color: var(--ink); border: 2px solid var(--ink); border-radius: 16px; padding: 14px 18px 16px; box-shadow: 4px 4px 0 var(--ink); max-width: 440px; transition: transform .15s ease; }
+.count-card:hover { transform: translateY(-2px); }
+.count-card .row { display: flex; align-items: baseline; gap: 6px 10px; flex-wrap: wrap; }
+.count-card b { font-family: var(--display); font-weight: 700; font-size: 1.75rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.count-card .of { color: var(--muted); font-size: var(--s1); }
+.count-card .go { margin-left: auto; font-family: var(--display); font-weight: 600; font-size: var(--s1); color: var(--teal-strong); }
+.meter { height: 12px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.meter span { display: block; height: 100%; min-width: 8px; border-radius: 999px; background: var(--teal); }
+.band .meter { background: color-mix(in srgb, var(--on-band) 22%, transparent); }
+.band .meter span { background: var(--gold-on-band); }
+.jump { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.jump a { display: inline-flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 600; color: var(--teal-strong); text-decoration: none; }
+.jump a:hover { color: var(--ink); }
+.jump svg { width: 18px; height: 18px; flex: none; }
+
+/* Photo frames */
 .frame { background: var(--surface); padding: 10px 10px 14px; border-radius: 6px; box-shadow: 0 18px 40px -22px rgba(20,20,20,.55); margin: 0; }
-.ph { position: relative; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 3px; overflow: hidden;
-  background: radial-gradient(120% 80% at 30% 20%, var(--photo-a), var(--photo-b)); }
-.ph::before { content: ""; position: absolute; inset: 0; background: radial-gradient(40% 30% at 62% 38%, rgba(227,178,60,.18), transparent 70%); }
+.ph { position: relative; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 3px; overflow: hidden; background: radial-gradient(120% 80% at 30% 20%, var(--photo-a), var(--photo-b)); }
 .ph picture { display: contents; }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.ph .file { position: absolute; left: 10px; bottom: 10px; font-family: var(--mono); font-size: 0.7rem; color: #E9E3D6; background: rgba(0,0,0,.45); padding: 3px 7px; border-radius: 4px; max-width: calc(100% - 20px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ph .slot { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); color: rgba(233,227,214,.55); font-size: var(--s1); letter-spacing: .1em; text-transform: uppercase; }
-.frame figcaption { font-family: var(--display); font-size: var(--s1); color: var(--muted); padding: 10px 4px 0; line-height: 1.35; }
-.ph.wide { aspect-ratio: 3 / 2; }
 .ph.square { aspect-ratio: 1; }
-.span2 { grid-column: span 2; }
-.ph.wide2 { aspect-ratio: auto; height: 100%; }
-.span2 { display: flex; flex-direction: column; }
-.span2 .ph { flex: 1; min-height: 0; }
-.ph.wide2 img { position: absolute; inset: 0; }
-.ph img + * { display: none; }
-.ph:has(img)::before { display: none; }
+.ph.wide { aspect-ratio: 3 / 2; }
+.frame figcaption { font-family: var(--display); font-size: var(--s1); color: var(--muted); padding: 10px 4px 0; line-height: 1.35; }
 
-/* Problem */
-.problem .head { display: grid; gap: 16px; margin-bottom: 40px; }
-.problem h2, .h2 { font-size: var(--s5); }
-.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.trio > div { border-top: 3px solid var(--ink); padding-top: 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
-.trio h3 { font-size: var(--s4); }
-.trio p { color: var(--muted); }
-.turn { margin-top: 40px; font-family: var(--display); font-size: var(--s4); font-weight: 500; max-width: 34ch; }
-.turn b { color: var(--teal-strong); font-weight: 600; }
+/* Mission band */
+.mission .wrap { display: grid; gap: 22px; }
+.mission h2 { font-size: clamp(2.2rem, 6.4vw, 4rem); font-weight: 700; }
+.mission h2 .num { font-variant-numeric: tabular-nums; }
+.mission h2 .togo { display: block; color: var(--gold-on-band); font-weight: 600; }
+.mission .meter { height: 16px; max-width: 760px; }
+.meter-scale { display: flex; justify-content: space-between; max-width: 760px; font-size: var(--s1); color: var(--on-band-muted); font-variant-numeric: tabular-nums; margin-top: -12px; }
+.why { font-family: var(--display); font-size: var(--s4); font-weight: 500; max-width: 34ch; line-height: 1.3; }
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: color-mix(in srgb, var(--on-band) 20%, transparent); border-radius: 14px; overflow: hidden; margin: 8px 0 0; }
+.rules div { background: var(--band); padding: 18px 20px; display: grid; gap: 6px; align-content: start; }
+.rules dt { font-family: var(--display); font-weight: 600; font-size: var(--s3); }
+.rules dd { margin: 0; color: var(--on-band-muted); }
 
-/* Guide */
+/* What she does */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.card .ph { border-radius: 0; }
+.card .ph img { object-position: 50% 22%; }
+.card .ph img.top { object-position: 50% 0%; }
+.card-body { padding: 20px 22px 24px; display: grid; gap: 8px; align-content: start; }
+.card h3 { font-size: var(--s4); }
+.card p { color: var(--muted); }
+.card .tag { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--pink-strong); }
+.counter-badge { position: absolute; left: 50%; bottom: 14%; transform: translateX(-50%); background: rgba(10,12,10,.82); color: #fff; border-radius: 12px; padding: 8px 14px; font-family: var(--display); font-weight: 700; text-align: center; line-height: 1.1; white-space: nowrap; box-shadow: 0 8px 20px -8px rgba(0,0,0,.6); }
+.counter-badge small { display: block; font-size: .68rem; letter-spacing: .12em; color: #F5D98A; }
+.counter-badge span { font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+
+/* Where she'll be (the list between the EVENTS markers is written by scripts/events-feed.mjs) */
+.events { padding-top: 0; }
+.ev-sub { margin-bottom: 22px; }
+.ev-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.ev { display: grid; grid-template-columns: 68px 1fr; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px; min-width: 0; }
+.ev-date { margin: 0; display: grid; place-items: center; align-content: center; height: 76px; border-radius: 14px; background: var(--teal-strong); color: var(--on-teal); font-family: var(--display); line-height: 1; }
+.ev-date span { font-size: .78rem; font-weight: 600; letter-spacing: .1em; }
+.ev-date b { font-size: 1.9rem; font-weight: 700; }
+.ev-body { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.ev h3 { font-size: var(--s4); }
+.ev-when { font-weight: 600; }
+.ev-where, .ev-desc { color: var(--muted); overflow-wrap: anywhere; }
+.ev-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; }
+.ev-links a { font-family: var(--display); font-weight: 600; color: var(--teal-strong); text-decoration: none; }
+.ev-links a:hover { text-decoration: underline; }
+.ev-empty { border: 2px dashed var(--line); border-radius: 18px; padding: 26px; display: grid; gap: 6px; color: var(--muted); }
+.ev-empty-title { font-family: var(--display); font-weight: 600; font-size: var(--s4); color: var(--ink); }
+.ev-invite { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 28px; background: color-mix(in srgb, var(--pink) 12%, var(--surface)); border: 2px solid color-mix(in srgb, var(--pink) 45%, transparent); border-radius: 18px; padding: 22px 24px; }
+.ev-invite > div { display: grid; gap: 6px; max-width: 60ch; }
+.ev-invite h3 { font-size: var(--s4); }
+.ev-invite p { color: var(--muted); }
+
+/* The book */
+.book { background: var(--snow); }
+.book .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
+.book-cover { margin: 0; transform: rotate(-2deg); max-width: 460px; width: 100%; justify-self: center; }
+.book-cover .ph { aspect-ratio: 1; }
+.book-copy { display: grid; gap: 18px; min-width: 0; }
+.book h2 { font-size: clamp(2rem, 4.6vw, 3rem); }
+.book h2 em { font-style: normal; display: block; color: var(--pink-strong); }
+.book .by { font-family: var(--display); font-weight: 500; color: var(--green); }
+.book blockquote { margin: 0; padding-left: 18px; border-left: 4px solid var(--pink); display: grid; gap: 10px; font-size: var(--s3); }
+.book blockquote p:first-child { font-family: var(--display); font-weight: 600; font-size: var(--s4); }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.facts li { font-size: var(--s1); font-weight: 600; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+.fine { font-size: var(--s1); color: var(--muted); max-width: 62ch; }
+.peek { grid-column: 1 / -1; display: grid; gap: 14px; }
+.peek-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.peek-row .frame { padding: 6px 6px 10px; }
+.peek-row .ph { aspect-ratio: 2 / 1; }
+.peek h3 { font-size: var(--s3); }
+.teachers { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; border-top: 1px solid var(--line); padding-top: 22px; }
+.teachers p { max-width: 64ch; }
+.teachers b { font-family: var(--display); }
+
+/* Follow along */
+.channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.channel { display: grid; grid-template-columns: 48px 1fr; gap: 4px 14px; align-items: center; text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; transition: border-color .15s ease, transform .15s ease; min-width: 0; }
+.channel:hover { border-color: var(--teal); transform: translateY(-2px); }
+.channel .ico { grid-row: span 2; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--solid); color: var(--on-solid); }
+.channel .ico svg { width: 24px; height: 24px; }
+.channel.main .ico { background: var(--teal-strong); color: var(--on-teal); }
+.channel b { font-family: var(--display); font-weight: 600; font-size: var(--s3); line-height: 1.2; }
+.channel b small { font-family: var(--body); font-weight: 500; font-size: var(--s1); color: var(--muted); margin-left: 6px; }
+.channel span { color: var(--muted); font-size: var(--s1); line-height: 1.4; }
+.series { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
+.series p { font-family: var(--display); font-weight: 600; margin-right: 4px; }
+.series span { font-size: var(--s1); background: color-mix(in srgb, var(--gold) 22%, var(--surface)); border-radius: 999px; padding: 6px 12px; font-weight: 600; }
+
+/* Instagram feed (filled in automatically by .github/workflows/instagram-feed.yml) */
+.ig-feed .head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.ig-handle { font-family: var(--display); font-weight: 600; font-size: var(--s3); color: var(--teal-strong); text-decoration: none; }
+.ig-handle:hover { color: var(--ink); }
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; border-radius: 10px; overflow: hidden; }
+.ig-tile { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: var(--photo-a); color: #F6F1E7; }
+.ig-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.ig-tile:focus-visible { outline: 3px solid var(--teal); outline-offset: -3px; }
+.ig-badge { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; color: #fff; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7)); }
+.ig-badge svg { width: 100%; height: 100%; display: block; }
+.ig-cap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 16px; background: linear-gradient(to top, rgba(10,12,10,.85), rgba(10,12,10,0) 72%); font-size: var(--s1); line-height: 1.4; opacity: 0; transition: opacity .2s ease; }
+.ig-cap time { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: #F5D98A; }
+.ig-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ig-tile:hover .ig-cap, .ig-tile:focus-visible .ig-cap { opacity: 1; }
+.ig-tile:hover img { transform: scale(1.04); }
+.ig-foot { margin-top: 28px; display: flex; justify-content: center; }
+
+/* YouTube Shorts row (filled in automatically by .github/workflows/youtube-feed.yml) */
+.yt-feed .head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.yt-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.yt-tile { position: relative; display: block; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 12px; background: var(--photo-a); color: #F6F1E7; text-decoration: none; }
+.yt-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.yt-tile:hover img { transform: scale(1.04); }
+.yt-tile:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.yt-cap { position: absolute; inset: auto 0 0 0; padding: 36px 10px 10px; background: linear-gradient(to top, rgba(10,12,10,.88), rgba(10,12,10,0)); font-size: .8125rem; line-height: 1.3; display: grid; gap: 4px; }
+.yt-cap b { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: #F5D98A; }
+.yt-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Her story */
 .guide .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
 .guide-copy { display: grid; gap: 18px; min-width: 0; }
 .guide-copy p { font-size: var(--s3); color: var(--on-band-muted); max-width: 58ch; }
@@ -204,24 +325,6 @@ nav a:hover { color: var(--ink); }
 .facts-strip div { background: var(--band); padding: 14px 16px; }
 .facts-strip dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--on-band-muted); }
 .facts-strip dd { margin: 2px 0 0; font-family: var(--display); font-weight: 600; font-size: var(--s3); font-variant-numeric: tabular-nums; }
-
-/* Plan */
-.plan .head { display: grid; gap: 14px; margin-bottom: 36px; }
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
-.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.steps li::before { content: counter(step); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: var(--s3); background: var(--teal-strong); color: var(--on-teal); }
-.steps h3 { font-size: var(--s4); }
-.steps p { color: var(--muted); }
-
-/* Lineup (series schedule) */
-.lineup { margin-top: 56px; display: grid; gap: 14px; }
-.lineup h3.title { font-size: var(--s4); }
-.show { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding-block: 16px; border-top: 1px solid var(--line); align-items: baseline; }
-.show:last-child { border-bottom: 1px solid var(--line); }
-.when { font-family: var(--display); font-weight: 500; font-size: var(--s1); letter-spacing: .06em; text-transform: uppercase; color: var(--green); }
-.show h4 { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--s3); }
-.show p { color: var(--muted); max-width: 65ch; }
-.show > div { min-width: 0; }
 
 /* Meet Amazon */
 .meet .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 72px); align-items: start; }
@@ -238,47 +341,12 @@ nav a:hover { color: var(--ink); }
 .half ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
 .half .tag { font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
 
-/* Gallery */
-.gallery .head, .ig-feed .head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
-/* Instagram feed (filled in automatically by .github/workflows/instagram-feed.yml) */
-.ig-handle { font-family: var(--display); font-weight: 600; font-size: var(--s3); color: var(--teal-strong); text-decoration: none; }
-.ig-handle:hover { color: var(--ink); }
-.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; border-radius: 10px; overflow: hidden; }
-.ig-tile { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: var(--photo-a); color: #F6F1E7; }
-.ig-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
-.ig-tile:focus-visible { outline: 3px solid var(--teal); outline-offset: -3px; }
-.ig-badge { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; color: #fff; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7)); }
-.ig-badge svg { width: 100%; height: 100%; display: block; }
-.ig-cap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 16px; background: linear-gradient(to top, rgba(10,12,10,.85), rgba(10,12,10,0) 72%); font-size: var(--s1); line-height: 1.4; opacity: 0; transition: opacity .2s ease; }
-.ig-cap time { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: #F5D98A; }
-.ig-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.ig-tile:hover .ig-cap, .ig-tile:focus-visible .ig-cap { opacity: 1; }
-.ig-tile:hover img { transform: scale(1.04); }
-.ig-foot { margin-top: 28px; display: flex; justify-content: center; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.grid .frame:nth-child(3n+1) { transform: rotate(-1.2deg); }
-.grid .frame:nth-child(3n+3) { transform: rotate(1deg); }
-
-/* Stakes */
-.stakes .wrap > .h2 { margin-bottom: 32px; }
-.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.versus > div { border-radius: 18px; padding: 28px; display: grid; gap: 14px; align-content: start; min-width: 0; }
-.without { border: 2px dashed var(--line); color: var(--muted); }
-.with { background: var(--surface); border: 2px solid var(--teal); }
-.versus h3 { font-size: var(--s4); color: var(--ink); }
-.versus ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.versus li { padding-left: 28px; position: relative; }
-.without li::before { content: "–"; position: absolute; left: 6px; }
-.with li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 16px; height: 6px; border-radius: 50%; background: var(--teal); }
-
 /* Join the pack */
-.pack { text-align: left; position: relative; overflow: hidden; }
-.pack .wrap { position: relative; z-index: 1; }
+.pack { position: relative; overflow: hidden; }
+.pack .wrap { position: relative; z-index: 1; display: grid; gap: 28px; }
 .pack-dog { position: absolute; right: 0; bottom: 0; width: min(34vw, 400px); height: auto; z-index: 0; filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)); }
-@media (max-width: 880px) { .pack-dog { display: none; } }
-.pack .wrap { display: grid; gap: 28px; }
-.pack h2 { font-size: var(--s6); font-weight: 700; }
-.tagline2 { font-family: var(--display); font-size: var(--s4); color: var(--gold); }
+.pack h2 { font-size: var(--s6); font-weight: 700; max-width: 14ch; }
+.tagline2 { font-family: var(--display); font-size: var(--s4); color: var(--gold-on-band); }
 
 /* Footer */
 footer { padding-block: 36px; font-size: var(--s1); color: var(--muted); }
@@ -287,39 +355,102 @@ footer .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
 
 /* Responsive */
+@media (max-width: 960px) {
+  .channels { grid-template-columns: 1fr 1fr; }
+  .yt-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 880px) {
-  .hero .wrap, .guide .wrap, .meet .wrap { grid-template-columns: 1fr; }
+  .hero .wrap, .guide .wrap, .meet .wrap, .book .wrap { grid-template-columns: 1fr; }
   .hero-photo { max-width: 420px; margin-inline: auto; width: 100%; }
-  .grid { grid-template-columns: 1fr 1fr; }
-  .ph.wide2 { aspect-ratio: 2 / 1; height: auto; }
-  nav { order: 3; width: 100%; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .cards .card:last-child { grid-column: 1 / -1; }
+  .ev-list { grid-template-columns: 1fr; }
+  .rules { grid-template-columns: 1fr; }
+  .book-cover { max-width: 380px; }
+  .pack-dog { display: none; }
+  .top nav { order: 3; width: 100%; }
 }
 @media (max-width: 720px) {
-  .trio, .steps { grid-template-columns: 1fr; }
-  .trio p, .steps p { max-width: 65ch; }
+  .peek-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-inline: -16px; padding-inline: 16px; }
+  .peek-row .frame { scroll-snap-align: center; }
+}
+@media (max-width: 600px) {
+  .cards, .channels { grid-template-columns: 1fr; }
+  .cards .card:last-child { grid-column: auto; }
 }
 @media (max-width: 560px) {
-  .versus, .halves { grid-template-columns: 1fr; }
-  .show { grid-template-columns: 1fr; gap: 4px; }
+  .halves { grid-template-columns: 1fr; }
   .fact-sheet div { grid-template-columns: 110px 1fr; }
   .facts-strip { grid-template-columns: 1fr; }
   .bubble { right: 4px; bottom: 20px; max-width: 170px; font-size: var(--s1); }
   .flying-disc { width: 96px; height: 35px; left: -10px; top: -14px; }
   .top .btn { display: none; }
-  nav ul { gap: 6px 16px; }
+  .top nav ul { gap: 6px 16px; }
+  .nav-extra { display: none; }
   .btn { width: 100%; justify-content: center; }
-  .btns-more { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .btns-more { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .btn-alt { width: auto; padding: 10px 8px; gap: 6px; }
+  .ev { grid-template-columns: 56px 1fr; gap: 14px; padding: 16px; }
+  .ev-date { height: 64px; }
   .ig-grid { gap: 3px; border-radius: 6px; }
   .ig-cap { display: none; }
   .ig-badge { width: 18px; height: 18px; top: 6px; right: 6px; }
-  .btn-alt { width: auto; padding: 10px 8px; gap: 6px; }
+  .yt-grid { gap: 6px; }
+  .yt-cap span { -webkit-line-clamp: 2; }
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .flying-disc { animation: none; }
-  .btn { transition: none; }
-  .ig-tile img, .ig-cap { transition: none; }
+  .btn, .count-card, .channel { transition: none; }
+  .ig-tile img, .ig-cap, .yt-tile img { transition: none; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://amazonthedog.com/#brand",
+      "name": "Amazon the Dog",
+      "alternateName": ["@amazonthedog", "Amazon The Dog"],
+      "url": "https://amazonthedog.com/",
+      "logo": "https://amazonthedog.com/apple-touch-icon.png",
+      "image": "https://amazonthedog.com/og-image.jpg",
+      "slogan": "Same-day smiles. $0 delivery fee.",
+      "description": "A gentle black Golden Retriever and German Shepherd mix on a mission to record one million smiles.",
+      "foundingDate": "2024-11-03",
+      "sameAs": [
+        "https://www.instagram.com/amazonthedog__",
+        "https://www.youtube.com/@AmazonTheDogDelivers",
+        "https://www.tiktok.com/@amazonthedog",
+        "https://www.facebook.com/amazonthedog",
+        "https://www.snapchat.com/@amazonthedog",
+        "https://www.linkedin.com/company/amazonthedog"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://amazonthedog.com/#site",
+      "url": "https://amazonthedog.com/",
+      "name": "Amazon the Dog",
+      "publisher": { "@id": "https://amazonthedog.com/#brand" }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://amazonthedog.com/#book",
+      "name": "Amazon the Dog and the 12 Days of Smiles",
+      "alternativeHeadline": "A Christmas Counting Story",
+      "image": "https://amazonthedog.com/img/book/cover-1000.webp",
+      "inLanguage": "en",
+      "numberOfPages": 44,
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 8 },
+      "publisher": { "@id": "https://amazonthedog.com/#brand" },
+      "url": "https://amazonthedog.com/#book"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -328,10 +459,11 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
     <a class="mark" href="#top" aria-label="Amazon the Dog home"><span class="disc mini-disc" aria-hidden="true"></span>Amazon the Dog</a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="#story">Her story</a></li>
-        <li><a href="#meet">Meet Amazon</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#pack">Join the pack</a></li>
+        <li class="nav-extra"><a href="#mission">The mission</a></li>
+        <li><a href="#events">Where she'll be</a></li>
+        <li><a href="#book">Her book</a></li>
+        <li><a href="#follow">Follow along</a></li>
+        <li class="nav-extra"><a href="#story">Her story</a></li>
       </ul>
     </nav>
     <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">Follow</a>
@@ -340,33 +472,29 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
 
 <main id="top">
 
-  <!-- SB7 1–2: The hero (the visitor) and what they want -->
+  <!-- 1. The promise -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow">Golden Retriever × German Shepherd · Est. Nov 3, 2024</p>
-        <h1><span>Shepherd strength.</span><span><span class="gold">Golden heart.</span></span></h1>
-        <p class="lede">Amazon is a big black shepherd mix who looks like a guard dog and loves like a golden. Gentle with kids. Serious about frisbee. Follow along and get a smile in your feed a few times a week.</p>
+        <p class="eyebrow">Smile visits · A little frisbee · 1,000,000 smiles</p>
+        <h1><span>Same-day smiles.</span><span><span class="gold">$0 delivery fee.</span></span></h1>
+        <p class="lede">Amazon the Dog is a gentle black golden shepherd. She goes where a friendly face helps, catches a little frisbee on the way, and counts every smile she gets. Come follow the count to one million.</p>
+        <a class="count-card" href="#mission">
+          <span class="row"><b>5,287</b> <span class="of">smiles delivered of 1,000,000</span> <span class="go">How we count →</span></span>
+          <span class="meter" aria-hidden="true"><span style="width: calc(100% * 5287 / 1000000)"></span></span>
+        </a>
         <div class="btns">
           <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             Follow on Instagram</a>
-          <a class="btn btn-fb" href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.7H8.8V13h2v6z" fill="var(--solid)"/></svg>
-            Follow on Facebook</a>
-        </div>
-        <div class="btns btns-more" aria-label="More places to follow Amazon">
-          <a class="btn btn-alt" href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V15a6 6 0 1 1-6-6h.5v3.2A3 3 0 1 0 14 15z"/></svg>
-            TikTok</a>
-          <a class="btn btn-alt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
+          <a class="btn btn-yt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg>
-            YouTube</a>
-          <a class="btn btn-alt" href="https://www.snapchat.com/add/amazonthedog" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c3 0 5 2.2 5 5.2v2.3l1.6-.5c.6-.2 1 .6.4 1l-1.8 1c.6 1.6 1.9 2.8 3.4 3.3.5.2.4.9-.1 1-1 .3-1.6.5-1.8 1.4-1.2-.1-2.3.1-3.4.9-.7.5-1.4.9-3.3.9s-2.6-.4-3.3-.9c-1.1-.8-2.2-1-3.4-.9-.2-.9-.8-1.1-1.8-1.4-.5-.1-.6-.8-.1-1 1.5-.5 2.8-1.7 3.4-3.3l-1.8-1c-.6-.4-.2-1.2.4-1l1.6.5V8.2C7 5.2 9 3 12 3z"/></svg>
-            Snapchat</a>
+            Watch on YouTube</a>
         </div>
-        <p class="handle">@amazonthedog__ on Instagram · @amazonthedog on Facebook, TikTok &amp; Snapchat</p>
+        <nav class="jump" aria-label="Jump to">
+          <a href="#events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>See where she'll be</a>
+          <a href="#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M19 19v2H6"/></svg>Get her Christmas book</a>
+        </nav>
       </div>
       <div class="hero-photo">
         <span class="disc flying-disc" aria-hidden="true"></span>
@@ -374,144 +502,164 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
           <div class="ph"><picture><source type="image/avif" srcset="img/hero-400.avif 400w, img/hero-640.avif 640w, img/hero-900.avif 900w" sizes="(max-width: 880px) min(400px, calc(100vw - 52px)), (max-width: 1120px) 37vw, 420px"><source type="image/webp" srcset="img/hero-400.webp 400w, img/hero-640.webp 640w, img/hero-900.webp 900w" sizes="(max-width: 880px) min(400px, calc(100vw - 52px)), (max-width: 1120px) 37vw, 420px"><img src="img/hero-640.webp" width="900" height="1125" alt="Amazon, a black Golden Retriever and German Shepherd mix, sitting in the grass with a yak chew in her mouth and a blue bandana" fetchpriority="high"></picture></div>
           <figcaption>On smile duty, chew in paw.</figcaption>
         </figure>
-        <p class="bubble"><small>Amazon says</small>I have one job. The frisbee. I take it very seriously.</p>
+        <p class="bubble"><small>Amazon says</small>No wallet. No thumbs. Still delivering.</p>
       </div>
     </div>
   </section>
 
-  <!-- SB7 3: The problem (external, internal, philosophical) -->
-  <section class="section problem" style="padding-top: 24px;">
+  <!-- 2. The mission. Numbers come from KNOWLEDGE BASE/SMILE LEDGER/smile-total.json via tools/build_site.py -->
+  <section class="section band mission" id="mission" aria-labelledby="mission-title">
+    <div class="wrap">
+      <p class="eyebrow">The Million Smile Mission</p>
+      <h2 id="mission-title"><span class="num">5,287</span> smiles delivered. <span class="togo">Next stop: one million.</span></h2>
+      <div class="meter" role="img" aria-label="5,287 of 1,000,000 smiles"><span style="width: calc(100% * 5287 / 1000000)"></span></div>
+      <p class="meter-scale" aria-hidden="true"><span>0</span><span>1,000,000</span></p>
+      <p class="why">You never know what someone is carrying. One minute with a gentle dog can be the best part of their day.</p>
+      <dl class="rules">
+        <div><dt>What counts</dt><dd>Anyone her harness camera sees smile at her or greet her warmly. Every smile, family included.</dd></div>
+        <div><dt>Counted once</dt><dd>A moment reused in another video never counts twice. If we can't see it, it doesn't count.</dd></div>
+        <div><dt>Honest math</dt><dd>287 counted frame by frame so far, plus an estimated 5,000 from her first 20 months, before the camera.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 3. What she does -->
+  <section class="section does" id="what">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Why she's here</p>
-        <h2>Most of your feed doesn't make you feel better.</h2>
-        <p class="lede">And the big black dog at the park usually gets a wide berth. Amazon is out to fix both, one catch at a time.</p>
+        <p class="eyebrow">What she does</p>
+        <h2 class="h2">Smiles first. Frisbee second. Mostly.</h2>
       </div>
-      <div class="trio">
-        <div>
-          <h3>The scroll</h3>
-          <p>Five minutes in and you're more wound up than when you started. Bad news, hot takes, ads.</p>
-        </div>
-        <div>
-          <h3>The look</h3>
-          <p>People see a big black shepherd mix and cross the street. They miss the wagging tail.</p>
-        </div>
-        <div>
-          <h3>The question</h3>
-          <p>Families who want a big dog wonder if a gentle giant really exists, or just looks good in other people's photos.</p>
-        </div>
-      </div>
-      <p class="turn">Every dog deserves to be judged by her heart. <b>Amazon's job is to prove it.</b></p>
-    </div>
-  </section>
-
-  <!-- SB7 4: The guide (empathy + authority), told in Rob's voice -->
-  <section class="section band guide" id="story">
-    <div class="wrap">
-      <div class="guide-copy">
-        <p class="eyebrow">The story of Amazon</p>
-        <h2 class="h2">I named my dog after the most stressful thing in my life.</h2>
-        <p class="first">I spent seven years working with Amazon sellers. Every seller had a different problem, and every one of them made me want to pull my hair out. So when a four-month-old black puppy came home on March 1, 2025, the name was obvious.</p>
-        <p>She earned it fast. From March to May she raided the trash, had accidents in the house and ate the carpet.</p>
-        <p>Then she grew up. Today she's the calmest dog in our house, patient with kids and happiest with a frisbee in her mouth. That's the dog I want you to meet.</p>
-        <p class="sign">Rob, Amazon's dad</p>
-        <dl class="facts-strip">
-          <div><dt>Born</dt><dd>Nov 3, 2024</dd></div>
-          <div><dt>Home since</dt><dd>Mar 1, 2025</dd></div>
-          <div><dt>Carpets eaten</dt><dd>Retired from it</dd></div>
-        </dl>
-      </div>
-      <div class="thennow">
-        <figure class="frame">
-          <div class="ph"><picture><source type="image/avif" srcset="img/then-puppy-cart-400.avif 400w, img/then-puppy-cart-700.avif 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><source type="image/webp" srcset="img/then-puppy-cart-400.webp 400w, img/then-puppy-cart-700.webp 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><img src="img/then-puppy-cart-400.webp" width="700" height="875" alt="Amazon as a tiny black puppy riding in a store shopping cart" loading="lazy" decoding="async"></picture></div>
-          <figcaption>Then: small enough for a shopping cart.</figcaption>
-        </figure>
-        <figure class="frame">
-          <div class="ph"><picture><source type="image/avif" srcset="img/now-red-frisbee-400.avif 400w, img/now-red-frisbee-700.avif 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><source type="image/webp" srcset="img/now-red-frisbee-400.webp 400w, img/now-red-frisbee-700.webp 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><img src="img/now-red-frisbee-400.webp" width="700" height="875" alt="Grown-up Amazon by a pond, nosing her red frisbee in the grass" loading="lazy" decoding="async"></picture></div>
-          <figcaption>Now: all frisbee, all heart.</figcaption>
-        </figure>
+      <div class="cards">
+        <article class="card">
+          <div class="ph wide"><picture><source type="image/avif" srcset="img/gallery-store-counter-400.avif 400w, img/gallery-store-counter-600.avif 600w, img/gallery-store-counter-800.avif 800w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) calc(50vw - 27px), 360px"><source type="image/webp" srcset="img/gallery-store-counter-400.webp 400w, img/gallery-store-counter-600.webp 600w, img/gallery-store-counter-800.webp 800w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) calc(50vw - 27px), 360px"><img src="img/gallery-store-counter-600.webp" width="800" height="800" class="top" alt="Amazon with her paws up on a store checkout counter, smiling" loading="lazy" decoding="async"></picture></div>
+          <div class="card-body">
+            <p class="tag">Smile visits</p>
+            <h3>She goes where a friendly face helps.</h3>
+            <p>Stores, cafés, parks and community events. She walks slow, leans in and lets people come to her. Gentle with kids, patient with everyone.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph wide"><picture><source type="image/avif" srcset="img/gallery-blue-frisbee-400.avif 400w, img/gallery-blue-frisbee-600.avif 600w, img/gallery-blue-frisbee-800.avif 800w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) calc(50vw - 27px), 360px"><source type="image/webp" srcset="img/gallery-blue-frisbee-400.webp 400w, img/gallery-blue-frisbee-600.webp 600w, img/gallery-blue-frisbee-800.webp 800w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) calc(50vw - 27px), 360px"><img src="img/gallery-blue-frisbee-600.webp" width="800" height="800" alt="Amazon carrying a blue frisbee down a gravel lane" loading="lazy" decoding="async"></picture></div>
+          <div class="card-body">
+            <p class="tag">A little frisbee</p>
+            <h3>Catch of the Day.</h3>
+            <p>Her best catch, replayed in slow motion. Low throws only. The fails make the cut too.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph wide"><picture><source type="image/avif" srcset="img/gallery-the-look-400.avif 400w, img/gallery-the-look-600.avif 600w, img/gallery-the-look-800.avif 800w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) calc(100vw - 32px), 360px"><source type="image/webp" srcset="img/gallery-the-look-400.webp 400w, img/gallery-the-look-600.webp 600w, img/gallery-the-look-800.webp 800w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) calc(100vw - 32px), 360px"><img src="img/gallery-the-look-600.webp" width="800" height="800" alt="Amazon sitting on the carpet, looking up at the camera" loading="lazy" decoding="async"></picture><p class="counter-badge" aria-hidden="true"><small>TOTAL SMILES</small><span>5,287 / 1,000,000</span></p></div>
+          <div class="card-body">
+            <p class="tag">Counting every smile</p>
+            <h3>A camera on her harness.</h3>
+            <p>Every video carries a smile counter. Every smile goes in the ledger, one at a time, on the way to a million.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SB7 5: The plan -->
-  <section class="section plan">
+  <!-- 4. Where she'll be. The block between the EVENTS markers is written by scripts/events-feed.mjs from her public Google Calendar. -->
+  <section class="section events" id="events" aria-labelledby="events-title">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">How it works</p>
-        <h2 class="h2">Your daily smile, in three steps.</h2>
+        <p class="eyebrow">Where she'll be</p>
+        <h2 class="h2" id="events-title">Come get a smile in person.</h2>
+        <p class="lede">Visits, read-alouds and events she'd love to see you at. New dates show up here on their own.</p>
       </div>
-      <ol class="steps">
-        <li><h3>Follow her</h3><p>Hit follow on Instagram or Facebook. She posts on both.</p></li>
-        <li><h3>Catch the catch</h3><p>Watch for Catch of the Day two or three times a week, slow motion included.</p></li>
-        <li><h3>Pass it on</h3><p>Send her to someone who needs a smile, or someone who's sure big dogs are scary.</p></li>
-      </ol>
-
-      <div class="lineup">
-        <h3 class="title">What's on</h3>
-        <div class="show"><span class="when">2–3× a week</span><div><h4>Catch of the Day</h4><p>Her best catch, replayed in slow motion.</p></div></div>
-        <div class="show"><span class="when">Weekly</span><div><h4>Smile Duty</h4><p>Greeting people, cheering up the kids, meeting Rob at the door after a long workday.</p></div></div>
-        <div class="show"><span class="when">Weekly</span><div><h4>Amazon Reviews</h4><p>She rates toys and frisbees out of five. First up: her yak chews.</p></div></div>
-        <div class="show"><span class="when">Thursdays</span><div><h4>Then vs Now</h4><p>From carpet-eating puppy to gentle guardian, one photo at a time.</p></div></div>
-        <div class="show"><span class="when">Weekly</span><div><h4>Shepherd Brain vs Golden Heart</h4><p>Her two halves argue it out. The golden usually wins.</p></div></div>
+      <!-- EVENTS:START -->
+      <div class="ev-empty">
+        <p class="ev-empty-title">New dates are on the way.</p>
+        <p>Follow her on Instagram to hear first, or invite her to yours.</p>
       </div>
+      <aside class="ev-invite">
+        <div>
+          <h3>Invite Amazon</h3>
+          <p>A smile visit for your library, school, senior living community or event? Send her the date, the place and what you have in mind.</p>
+        </div>
+        <a class="btn btn-ig" href="https://ig.me/m/amazonthedog__" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.3A8.5 8.5 0 1 1 21 12z"/></svg>
+          Message her on Instagram</a>
+      </aside>
+      <!-- EVENTS:END -->
     </div>
   </section>
 
-  <!-- Meet Amazon: fact sheet + two breeds, one heart -->
-  <section class="section meet" id="meet" style="padding-top: 0;">
+  <!-- 5. Her Christmas book -->
+  <section class="section book" id="book" aria-labelledby="book-title">
     <div class="wrap">
-      <div class="meet-left">
-        <p class="eyebrow">Meet Amazon</p>
-        <h2 class="h2">Two breeds. One big heart.</h2>
-        <dl class="fact-sheet">
-          <div><dt>Breed</dt><dd>Golden Retriever × German Shepherd, 50/50</dd></div>
-          <div><dt>Coat</dt><dd>Glossy solid black with golden-style feathering</dd></div>
-          <div><dt>Ears</dt><dd>Drop ears that fold forward, like a golden's</dd></div>
-          <div><dt>Eyes</dt><dd>Brown, amber in the sun</dd></div>
-          <div><dt>Loves</dt><dd>Frisbee, fetch, car rides, snow, yak chews</dd></div>
-          <div><dt>Job</dt><dd>Smile duty, full time</dd></div>
-        </dl>
+      <figure class="frame book-cover">
+        <div class="ph"><picture><source type="image/avif" srcset="img/book/cover-400.avif 400w, img/book/cover-700.avif 700w, img/book/cover-1000.avif 1000w" sizes="(max-width: 880px) min(380px, calc(100vw - 52px)), 440px"><source type="image/webp" srcset="img/book/cover-400.webp 400w, img/book/cover-700.webp 700w, img/book/cover-1000.webp 1000w" sizes="(max-width: 880px) min(380px, calc(100vw - 52px)), 440px"><img src="img/book/cover-700.webp" width="1000" height="1000" alt="Book cover: Amazon the Dog and the 12 Days of Smiles, a Christmas counting story. Amazon sits in the snow in her pink vest on a street strung with Christmas lights." loading="lazy" decoding="async"></picture></div>
+      </figure>
+      <div class="book-copy">
+        <p class="eyebrow">New: her Christmas book</p>
+        <h2 id="book-title">Amazon the Dog <em>and the 12 Days of Smiles</em></h2>
+        <p class="by">A Christmas counting story. Told by Amazon the Dog, written down by her dad.</p>
+        <blockquote>
+          <p>No thumbs. No wallet. No problem.</p>
+          <p>Twelve days before Christmas, Amazon can't buy a single present. So she delivers the one thing she's good at: smiles. One on day one, two on day two, all the way to twelve. Eleven come easy. The twelfth takes something more.</p>
+        </blockquote>
+        <ul class="facts">
+          <li>Picture book, 44 pages</li>
+          <li>Ages 4–8</li>
+          <li>Count-along page</li>
+          <li>Questions for grown-ups and teachers</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Hear first on Instagram</a>
+        </div>
+        <p class="fine">The free download is almost ready: you'll be able to download it free or name your price to support Amazon's smile visits. Printed copies are on the way.</p>
       </div>
-      <div class="halves">
-        <div class="half shepherd">
-          <span class="tag">Shepherd brain</span>
-          <h3>Looks the part</h3>
-          <ul>
-            <li>Lean, athletic, built to run</li>
-            <li>Tracks every throw before it leaves your hand</li>
-            <li>Keeps an eye on the whole yard</li>
-          </ul>
+      <div class="peek">
+        <h3>Peek inside</h3>
+        <div class="peek-row">
+          <figure class="frame"><div class="ph"><picture><source type="image/avif" srcset="img/book/day5-park-800.avif 800w, img/book/day5-park-1400.avif 1400w" sizes="(max-width: 720px) 82vw, 360px"><source type="image/webp" srcset="img/book/day5-park-800.webp 800w, img/book/day5-park-1400.webp 1400w" sizes="(max-width: 720px) 82vw, 360px"><img src="img/book/day5-park-800.webp" width="1400" height="699" alt="Day 5 spread: five kids at the park and one teal frisbee; the man in the gray coat sits on a bench" loading="lazy" decoding="async"></picture></div><figcaption>Day 5: five kids, one teal frisbee.</figcaption></figure>
+          <figure class="frame"><div class="ph"><picture><source type="image/avif" srcset="img/book/day6-visit-800.avif 800w, img/book/day6-visit-1400.avif 1400w" sizes="(max-width: 720px) 82vw, 360px"><source type="image/webp" srcset="img/book/day6-visit-800.webp 800w, img/book/day6-visit-1400.webp 1400w" sizes="(max-width: 720px) 82vw, 360px"><img src="img/book/day6-visit-800.webp" width="1400" height="699" alt="Day 6 spread: Amazon walks slowly down a quiet hallway and leans on six grandmas and grandpas" loading="lazy" decoding="async"></picture></div><figcaption>Day 6: she leaned on six knees.</figcaption></figure>
+          <figure class="frame"><div class="ph"><picture><source type="image/avif" srcset="img/book/twelfth-smile-800.avif 800w, img/book/twelfth-smile-1400.avif 1400w" sizes="(max-width: 720px) 82vw, 360px"><source type="image/webp" srcset="img/book/twelfth-smile-800.webp 800w, img/book/twelfth-smile-1400.webp 1400w" sizes="(max-width: 720px) 82vw, 360px"><img src="img/book/twelfth-smile-800.webp" width="1400" height="699" alt="The twelfth smile: the man in the gray coat scratches Amazon behind the ears on his porch" loading="lazy" decoding="async"></picture></div><figcaption>The twelfth smile takes something more.</figcaption></figure>
         </div>
-        <div class="half golden">
-          <span class="tag">Golden heart</span>
-          <h3>Acts the part</h3>
-          <ul>
-            <li>Super sweet and patient with kids</li>
-            <li>Big sister to Rob's daughter</li>
-            <li>Thinks every visitor came to see her</li>
-          </ul>
-        </div>
+      </div>
+      <div class="teachers">
+        <p><b>Librarians and teachers:</b> Amazon would love to come read it with your class or story time, pink vest and all. Send her the date and the place.</p>
+        <a class="btn btn-alt" href="https://ig.me/m/amazonthedog__" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.3A8.5 8.5 0 1 1 21 12z"/></svg>
+          Invite her to read</a>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="section gallery" id="gallery" style="padding-top: 0;">
+  <!-- 6. Follow along: every app gets different videos -->
+  <section class="section follow" id="follow" aria-labelledby="follow-title">
     <div class="wrap">
       <div class="head">
-        <div style="display:grid; gap:12px;">
-          <p class="eyebrow">Gallery</p>
-          <h2 class="h2">A few favorites.</h2>
-        </div>
-        <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">See more on Instagram</a>
+        <p class="eyebrow">Follow along</p>
+        <h2 class="h2" id="follow-title">Pick your app. Every one gets different videos.</h2>
+        <p class="lede">Follow her twice and you'll never see a rerun.</p>
       </div>
-      <div class="grid">
-        <figure class="frame span2"><div class="ph wide2"><picture><source type="image/avif" srcset="img/gallery-golden-hour-700.avif 700w, img/gallery-golden-hour-1000.avif 1000w, img/gallery-golden-hour-1400.avif 1400w" sizes="(max-width: 880px) calc(100vw - 52px), (max-width: 1120px) calc(66vw - 30px), 700px"><source type="image/webp" srcset="img/gallery-golden-hour-700.webp 700w, img/gallery-golden-hour-1000.webp 1000w, img/gallery-golden-hour-1400.webp 1400w" sizes="(max-width: 880px) calc(100vw - 52px), (max-width: 1120px) calc(66vw - 30px), 700px"><img src="img/gallery-golden-hour-1000.webp" width="1400" height="700" alt="Amazon stretched out in the grass at golden hour, tongue out" loading="lazy" decoding="async"></picture></div><figcaption>Golden hour, tongue out.</figcaption></figure>
-                <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-blue-frisbee-400.avif 400w, img/gallery-blue-frisbee-600.avif 600w, img/gallery-blue-frisbee-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-blue-frisbee-400.webp 400w, img/gallery-blue-frisbee-600.webp 600w, img/gallery-blue-frisbee-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-blue-frisbee-600.webp" width="800" height="800" alt="Amazon carrying a blue frisbee down a gravel lane" loading="lazy" decoding="async"></picture></div><figcaption>Blue frisbee, locked in.</figcaption></figure>
-        <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-store-counter-400.avif 400w, img/gallery-store-counter-600.avif 600w, img/gallery-store-counter-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-store-counter-400.webp 400w, img/gallery-store-counter-600.webp 600w, img/gallery-store-counter-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-store-counter-600.webp" width="800" height="800" alt="Amazon with her paws up on a store checkout counter, smiling" loading="lazy" decoding="async"></picture></div><figcaption>Checking out. She greets every cashier.</figcaption></figure>
-        <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-car-ride-400.avif 400w, img/gallery-car-ride-600.avif 600w, img/gallery-car-ride-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-car-ride-400.webp 400w, img/gallery-car-ride-600.webp 600w, img/gallery-car-ride-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-car-ride-600.webp" width="800" height="800" alt="Amazon looking out of a car window" loading="lazy" decoding="async"></picture></div><figcaption>Shotgun, always.</figcaption></figure>
-                <figure class="frame"><div class="ph square"><picture><source type="image/avif" srcset="img/gallery-the-look-400.avif 400w, img/gallery-the-look-600.avif 600w, img/gallery-the-look-800.avif 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><source type="image/webp" srcset="img/gallery-the-look-400.webp 400w, img/gallery-the-look-600.webp 600w, img/gallery-the-look-800.webp 800w" sizes="(max-width: 880px) calc(50vw - 47px), (max-width: 1120px) calc(33vw - 45px), 330px"><img src="img/gallery-the-look-600.webp" width="800" height="800" alt="Amazon sitting on the carpet, looking up at the camera" loading="lazy" decoding="async"></picture></div><figcaption>The look that gets her anything.</figcaption></figure>
+      <div class="channels">
+        <a class="channel main" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <b>Instagram <small>@amazonthedog__</small></b><span>Reels most days and Stories every day.</span></a>
+        <a class="channel main" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg></span>
+          <b>YouTube <small>@AmazonTheDogDelivers</small></b><span>Shorts. Her biggest audience so far.</span></a>
+        <a class="channel" href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V15a6 6 0 1 1-6-6h.5v3.2A3 3 0 1 0 14 15z"/></svg></span>
+          <b>TikTok <small>@amazonthedog</small></b><span>Catches, reviews and store visits.</span></a>
+        <a class="channel" href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></span>
+          <b>Facebook <small>amazonthedog</small></b><span>The longer stories, for the whole family.</span></a>
+        <a class="channel" href="https://www.snapchat.com/@amazonthedog" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c3 0 5 2.2 5 5.2v2.3l1.6-.5c.6-.2 1 .6.4 1l-1.8 1c.6 1.6 1.9 2.8 3.4 3.3.5.2.4.9-.1 1-1 .3-1.6.5-1.8 1.4-1.2-.1-2.3.1-3.4.9-.7.5-1.4.9-3.3.9s-2.6-.4-3.3-.9c-1.1-.8-2.2-1-3.4-.9-.2-.9-.8-1.1-1.8-1.4-.5-.1-.6-.8-.1-1 1.5-.5 2.8-1.7 3.4-3.3l-1.8-1c-.6-.4-.2-1.2.4-1l1.6.5V8.2C7 5.2 9 3 12 3z"/></svg></span>
+          <b>Snapchat <small>@amazonthedog</small></b><span>Story time, made for sending to a friend.</span></a>
+        <a class="channel" href="https://www.linkedin.com/company/amazonthedog" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3.3 9h3.4v11.5H3.3zM9 9h3.3v1.6c.5-.9 1.7-1.9 3.5-1.9 3.6 0 4.2 2.3 4.2 5.4v6.4h-3.4v-5.7c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.8H9z"/></svg></span>
+          <b>LinkedIn <small>Amazon the Dog</small></b><span>A minute of kindness in your workday.</span></a>
+      </div>
+      <div class="series">
+        <p>Her series:</p>
+        <span>Smile Duty</span><span>Catch of the Day</span><span>Amazon Reviews</span><span>Then vs Now</span><span>Shepherd Brain vs Golden Heart</span>
       </div>
     </div>
   </section>
@@ -572,58 +720,139 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
   </section>
   <!-- IG-FEED:END -->
 
-  <!-- SB7 6–7: Failure vs success (the stakes) -->
-  <section class="section stakes" style="padding-top: 0;">
+  <!-- Latest Shorts, rewritten by scripts/youtube-feed.mjs -->
+  <!-- YT-FEED:START -->
+  <section class="section yt-feed" id="youtube" style="padding-top: 0;" aria-labelledby="yt-title">
     <div class="wrap">
-      <h2 class="h2">Your feed, two ways.</h2>
-      <div class="versus">
-        <div class="without">
-          <h3>Without Amazon</h3>
+      <div class="head">
+        <div style="display:grid; gap:12px;">
+          <p class="eyebrow">Fresh from YouTube</p>
+          <h2 class="h2" id="yt-title">Her latest Shorts.</h2>
+        </div>
+        <a class="ig-handle" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">@AmazonTheDogDelivers</a>
+      </div>
+      <div class="yt-grid">
+        <a class="yt-tile" href="https://www.youtube.com/shorts/Ga_b1QhK-io" target="_blank" rel="noopener">
+          <img src="img/yt/Ga_b1QhK-io-360.webp" srcset="img/yt/Ga_b1QhK-io-360.webp 360w, img/yt/Ga_b1QhK-io-720.webp 720w" sizes="(max-width: 880px) 33vw, 180px" width="720" height="1280" alt="YouTube Short from Amazon the Dog: Big Black Dog Meets Little Kids (So Gentle)" loading="lazy" decoding="async">
+          <span class="yt-cap"><b>1K views</b><span>Big Black Dog Meets Little Kids (So Gentle)</span></span>
+        </a>
+        <a class="yt-tile" href="https://www.youtube.com/shorts/P1WB5onPQqo" target="_blank" rel="noopener">
+          <img src="img/yt/P1WB5onPQqo-360.webp" srcset="img/yt/P1WB5onPQqo-360.webp 360w, img/yt/P1WB5onPQqo-720.webp 720w" sizes="(max-width: 880px) 33vw, 180px" width="720" height="1280" alt="YouTube Short from Amazon the Dog: Big Black Dog Meets a New Dog Friend at Lowe's" loading="lazy" decoding="async">
+          <span class="yt-cap"><b>533 views</b><span>Big Black Dog Meets a New Dog Friend at Lowe's</span></span>
+        </a>
+        <a class="yt-tile" href="https://www.youtube.com/shorts/aGd1jPO1O5U" target="_blank" rel="noopener">
+          <img src="img/yt/aGd1jPO1O5U-360.webp" srcset="img/yt/aGd1jPO1O5U-360.webp 360w, img/yt/aGd1jPO1O5U-720.webp 720w" sizes="(max-width: 880px) 33vw, 180px" width="720" height="1280" alt="YouTube Short from Amazon the Dog: Dog Guesses Where Every Car Ride Is Going" loading="lazy" decoding="async">
+          <span class="yt-cap"><b>1.2K views</b><span>Dog Guesses Where Every Car Ride Is Going</span></span>
+        </a>
+        <a class="yt-tile" href="https://www.youtube.com/shorts/o7X2x5UlUZ0" target="_blank" rel="noopener">
+          <img src="img/yt/o7X2x5UlUZ0-360.webp" srcset="img/yt/o7X2x5UlUZ0-360.webp 360w, img/yt/o7X2x5UlUZ0-720.webp 720w" sizes="(max-width: 880px) 33vw, 180px" width="720" height="1280" alt="YouTube Short from Amazon the Dog: Black Golden Shepherd Snow Day Zoomies (Throwback)" loading="lazy" decoding="async">
+          <span class="yt-cap"><b>441 views</b><span>Black Golden Shepherd Snow Day Zoomies (Throwback)</span></span>
+        </a>
+        <a class="yt-tile" href="https://www.youtube.com/shorts/OM35G8MBgAc" target="_blank" rel="noopener">
+          <img src="img/yt/OM35G8MBgAc-360.webp" srcset="img/yt/OM35G8MBgAc-360.webp 360w, img/yt/OM35G8MBgAc-720.webp 720w" sizes="(max-width: 880px) 33vw, 180px" width="720" height="1280" alt="YouTube Short from Amazon the Dog: Dog Rates Ice Cubes Out of 5 Paws" loading="lazy" decoding="async">
+          <span class="yt-cap"><b>1.2K views</b><span>Dog Rates Ice Cubes Out of 5 Paws</span></span>
+        </a>
+        <a class="yt-tile" href="https://www.youtube.com/shorts/sOB18PIUpFM" target="_blank" rel="noopener">
+          <img src="img/yt/sOB18PIUpFM-360.webp" srcset="img/yt/sOB18PIUpFM-360.webp 360w, img/yt/sOB18PIUpFM-720.webp 720w" sizes="(max-width: 880px) 33vw, 180px" width="720" height="1280" alt="YouTube Short from Amazon the Dog: Dog Goes to Little Caesars, Makes a Tiny Best Friend" loading="lazy" decoding="async">
+          <span class="yt-cap"><b>266 views</b><span>Dog Goes to Little Caesars, Makes a Tiny Best Friend</span></span>
+        </a>
+      </div>
+      <div class="ig-foot">
+        <a class="btn btn-yt" href="https://www.youtube.com/@AmazonTheDogDelivers?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      </div>
+    </div>
+  </section>
+  <!-- YT-FEED:END -->
+
+  <!-- 7. Her story, told in Rob's voice -->
+  <section class="section band guide" id="story">
+    <div class="wrap">
+      <div class="guide-copy">
+        <p class="eyebrow">The story of Amazon</p>
+        <h2 class="h2">I named my dog after the most stressful thing in my life.</h2>
+        <p class="first">I spent seven years working with Amazon sellers. Every seller had a different problem, and every one of them made me want to pull my hair out. So when a four-month-old black puppy came home on March 1, 2025, the name was obvious.</p>
+        <p>She earned it fast. From March to May she raided the trash, had accidents in the house and ate the carpet.</p>
+        <p>Then she grew up. Today she's the calmest dog in our house, patient with kids and happiest with a frisbee in her mouth. Now she's out to deliver a million smiles, and she doesn't charge a thing.</p>
+        <p class="sign">Rob, Amazon's dad</p>
+        <dl class="facts-strip">
+          <div><dt>Born</dt><dd>Nov 3, 2024</dd></div>
+          <div><dt>Home since</dt><dd>Mar 1, 2025</dd></div>
+          <div><dt>Carpets eaten</dt><dd>Retired from it</dd></div>
+        </dl>
+      </div>
+      <div class="thennow">
+        <figure class="frame">
+          <div class="ph"><picture><source type="image/avif" srcset="img/then-puppy-cart-400.avif 400w, img/then-puppy-cart-700.avif 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><source type="image/webp" srcset="img/then-puppy-cart-400.webp 400w, img/then-puppy-cart-700.webp 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><img src="img/then-puppy-cart-400.webp" width="700" height="875" alt="Amazon as a tiny black puppy riding in a store shopping cart" loading="lazy" decoding="async"></picture></div>
+          <figcaption>Then: small enough for a shopping cart.</figcaption>
+        </figure>
+        <figure class="frame">
+          <div class="ph"><picture><source type="image/avif" srcset="img/now-red-frisbee-400.avif 400w, img/now-red-frisbee-700.avif 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><source type="image/webp" srcset="img/now-red-frisbee-400.webp 400w, img/now-red-frisbee-700.webp 700w" sizes="(max-width: 880px) calc(50vw - 44px), 220px"><img src="img/now-red-frisbee-400.webp" width="700" height="875" alt="Grown-up Amazon by a pond, nosing her red frisbee in the grass" loading="lazy" decoding="async"></picture></div>
+          <figcaption>Now: all frisbee, all heart.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Amazon: fact sheet + two breeds, one heart -->
+  <section class="section meet" id="meet">
+    <div class="wrap">
+      <div class="meet-left">
+        <p class="eyebrow">Meet Amazon</p>
+        <h2 class="h2">Two breeds. One big heart.</h2>
+        <dl class="fact-sheet">
+          <div><dt>Breed</dt><dd>Golden Retriever × German Shepherd, 50/50</dd></div>
+          <div><dt>Coat</dt><dd>Glossy solid black with golden-style feathering</dd></div>
+          <div><dt>Ears</dt><dd>Drop ears that fold forward, like a golden's</dd></div>
+          <div><dt>Eyes</dt><dd>Brown, amber in the sun</dd></div>
+          <div><dt>Loves</dt><dd>Frisbee, fetch, car rides, snow, yak chews</dd></div>
+          <div><dt>Job</dt><dd>Same-day smiles. $0 delivery fee.</dd></div>
+        </dl>
+      </div>
+      <div class="halves">
+        <div class="half shepherd">
+          <span class="tag">Shepherd brain</span>
+          <h3>Looks the part</h3>
           <ul>
-            <li>The same scroll, the same stress.</li>
-            <li>Big black dogs stay something to walk around.</li>
-            <li>You never see the catch everyone's talking about.</li>
+            <li>Lean, athletic, built to run</li>
+            <li>Tracks every throw before it leaves your hand</li>
+            <li>Keeps an eye on the whole yard</li>
           </ul>
         </div>
-        <div class="with">
-          <h3>With Amazon</h3>
+        <div class="half golden">
+          <span class="tag">Golden heart</span>
+          <h3>Acts the part</h3>
           <ul>
-            <li>A smile in three seconds, a few times a week.</li>
-            <li>Proof a big dog can be the gentlest one in the room.</li>
-            <li>A real family's dog to cheer for, from puppy chaos to gentle guardian.</li>
+            <li>Super sweet and patient with kids</li>
+            <li>Big sister to Rob's daughter</li>
+            <li>Thinks every visitor came to see her</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SB7 CTA: follow -->
+  <!-- Join the pack -->
   <section class="section band pack" id="pack">
     <picture><source media="(min-width: 881px)" type="image/avif" srcset="img/cutout-400.avif 400w, img/cutout-700.avif 700w" sizes="min(34vw, 400px)"><source media="(min-width: 881px)" type="image/webp" srcset="img/cutout-400.webp 400w, img/cutout-700.webp 700w" sizes="min(34vw, 400px)"><img class="pack-dog" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="700" height="940" alt="" loading="lazy" decoding="async"></picture>
     <div class="wrap">
       <p class="eyebrow">Join the pack</p>
-      <h2>Come see the catch.</h2>
-      <p class="tagline2">Delivering same-day smiles, not packages.</p>
+      <h2>Follow the count to a million.</h2>
+      <p class="tagline2">Same-day smiles. $0 delivery fee.</p>
       <div class="btns">
         <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           Follow on Instagram</a>
-        <a class="btn btn-fb" href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M13.2 19v-6h2l.3-2.4h-2.3V9.2c0-.7.2-1.2 1.2-1.2h1.2V5.9c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.7H8.8V13h2v6z" fill="var(--on-band)"/></svg>
-          Follow on Facebook</a>
+        <a class="btn btn-yt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg>
+          Watch on YouTube</a>
       </div>
       <div class="btns btns-more" aria-label="More places to follow Amazon">
-        <a class="btn btn-alt" href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V15a6 6 0 1 1-6-6h.5v3.2A3 3 0 1 0 14 15z"/></svg>
-          TikTok</a>
-        <a class="btn btn-alt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg>
-          YouTube</a>
-        <a class="btn btn-alt" href="https://www.snapchat.com/add/amazonthedog" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c3 0 5 2.2 5 5.2v2.3l1.6-.5c.6-.2 1 .6.4 1l-1.8 1c.6 1.6 1.9 2.8 3.4 3.3.5.2.4.9-.1 1-1 .3-1.6.5-1.8 1.4-1.2-.1-2.3.1-3.4.9-.7.5-1.4.9-3.3.9s-2.6-.4-3.3-.9c-1.1-.8-2.2-1-3.4-.9-.2-.9-.8-1.1-1.8-1.4-.5-.1-.6-.8-.1-1 1.5-.5 2.8-1.7 3.4-3.3l-1.8-1c-.6-.4-.2-1.2.4-1l1.6.5V8.2C7 5.2 9 3 12 3z"/></svg>
-          Snapchat</a>
+        <a class="btn btn-alt" href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">TikTok</a>
+        <a class="btn btn-alt" href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn btn-alt" href="https://www.snapchat.com/@amazonthedog" target="_blank" rel="noopener">Snapchat</a>
+        <a class="btn btn-alt" href="https://www.linkedin.com/company/amazonthedog" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <p class="handle">@amazonthedog</p>
+      <p class="handle">@amazonthedog__ on Instagram · @AmazonTheDogDelivers on YouTube · @amazonthedog everywhere else</p>
     </div>
   </section>
 </main>
@@ -633,10 +862,11 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
     <span>© 2026 Amazon the Dog · Shepherd strength. Golden heart.</span>
     <span class="links">
       <a href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.snapchat.com/add/amazonthedog" target="_blank" rel="noopener">Snapchat</a>
+      <a href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.snapchat.com/@amazonthedog" target="_blank" rel="noopener">Snapchat</a>
+      <a href="https://www.linkedin.com/company/amazonthedog" target="_blank" rel="noopener">LinkedIn</a>
     </span>
     <span>A family dog. Not affiliated with Amazon.com, Inc. · <a href="/privacy.html">Privacy</a></span>
   </div>
