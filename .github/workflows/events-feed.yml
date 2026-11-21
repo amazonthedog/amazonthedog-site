@@ -1,0 +1,52 @@
+name: Events feed
+
+# Fills the "Where she'll be" section from Amazon's public Google Calendar.
+# Setup (once): Settings > Secrets and variables > Actions > Variables > New repository variable
+#   Name: EVENTS_ICS_URL   Value: the calendar's "Public address in iCal format"
+# No secrets needed. Until the variable is set, the section shows the invite card only.
+on:
+  schedule:
+    - cron: "11 */3 * * *"   # every 3 hours, off the Instagram (:23) and YouTube (:47) minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: site-feeds
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update the events section
+        env:
+          EVENTS_ICS_URL: ${{ vars.EVENTS_ICS_URL }}
+        run: node scripts/events-feed.mjs
+
+      - name: Publish changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No change to the events."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update events"
+          git pull --rebase --quiet || true
+          git push
+          gh api -X POST "repos/$REPO/pages/builds" > /dev/null \
+            && echo "Site rebuild requested." \
+            || echo "::warning::Could not request a Pages rebuild; it should still deploy from the push."

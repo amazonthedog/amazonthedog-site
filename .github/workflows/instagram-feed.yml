@@ -86,6 +86,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Update Instagram feed"
+          git pull --rebase --quiet || true
           git push
           gh api -X POST "repos/$REPO/pages/builds" > /dev/null \
             && echo "Site rebuild requested." \

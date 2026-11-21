@@ -1,0 +1,51 @@
+name: YouTube feed
+
+# Pulls Amazon's latest YouTube Shorts into the "Fresh from YouTube" section.
+# No secrets needed: it reads the channel's public feed and Shorts page.
+on:
+  schedule:
+    - cron: "47 */4 * * *"   # every 4 hours, off the Instagram job's minute
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: site-feeds
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install image tools
+        run: npm install --no-save --no-package-lock --silent sharp@0.33
+
+      - name: Update the Shorts row
+        run: node scripts/youtube-feed.mjs
+
+      - name: Publish changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          git add index.html img/yt 2>/dev/null || git add index.html
+          if git diff --cached --quiet; then
+            echo "No new Shorts."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update YouTube Shorts row"
+          git pull --rebase --quiet || true
+          git push
+          gh api -X POST "repos/$REPO/pages/builds" > /dev/null \
+            && echo "Site rebuild requested." \
+            || echo "::warning::Could not request a Pages rebuild; it should still deploy from the push."
