@@ -16,7 +16,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVWFMXMJ2"></script>
 <script>
   gtag('js', new Date());
-  gtag('config', 'G-HXVWFMXMJ2');
+  // Add ?ga_debug=1 to the URL to send a test visit to DebugView (kept out of reports by the Developer traffic filter)
+  gtag('config', 'G-HXVWFMXMJ2', /[?&]ga_debug=1\b/.test(location.search) ? { debug_mode: true } : {});
 </script>
 <title>Amazon the Dog · Same-day smiles. $0 delivery fee.</title>
 <meta name="description" content="Amazon the Dog is a gentle black golden shepherd on a mission to record 1,000,000 smiles. See where she'll be next, get her Christmas book, and follow along on every app.">

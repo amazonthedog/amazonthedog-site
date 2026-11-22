@@ -16,7 +16,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVWFMXMJ2"></script>
 <script>
   gtag('js', new Date());
-  gtag('config', 'G-HXVWFMXMJ2');
+  // Add ?ga_debug=1 to the URL to send a test visit to DebugView (kept out of reports by the Developer traffic filter)
+  gtag('config', 'G-HXVWFMXMJ2', /[?&]ga_debug=1\b/.test(location.search) ? { debug_mode: true } : {});
 </script>
 <title>Privacy · Amazon the Dog</title>
 <meta name="description" content="How amazonthedog.com uses Google Analytics.">
@@ -60,15 +61,16 @@ a.btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
   <h1>What this site keeps track of.</h1>
   <p>amazonthedog.com is a one-page site about our dog. The site itself doesn't take payments, run ads, or ask for your name or email.</p>
   <h2>Visit counts</h2>
-  <p>We use Google Analytics to count visits: how many people stop by, where they came from, how far they scroll, and which buttons they tap, like "Follow on Instagram." Google Analytics uses cookies to do this. We never send it your name, email, or anything else that identifies you. If you visit from the EU, the UK, or Switzerland, the site doesn't set analytics cookies.</p>
+  <p>We use Google Analytics to see how the site gets used: how many people stop by and where they came from, how far they scroll and how long each part stays on screen, which buttons, links and photos they tap (like "Follow on Instagram"), whether they copy or print something (never what), how fast the page loads, and any errors. Google Analytics uses cookies to do this. We never send it your name, email, anything you type or copy, or anything else that identifies you. If you visit from the EU, the UK, or Switzerland, the site doesn't set analytics cookies.</p>
   <h2>Links to other sites</h2>
   <p>The follow buttons open Instagram, YouTube, TikTok, Facebook, Snapchat, and LinkedIn. Her Christmas book's download and checkout happen on Gumroad, so Gumroad handles any email address or payment you give it there. The calendar buttons open Google Calendar or your own calendar app, and "Directions" opens Google Maps. Each of those sites' own privacy policies apply once you're there.</p>
   <h2>Opting out</h2>
   <p>You can block Google Analytics on every site with Google's <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out browser add-on</a>, a content blocker, or your browser's privacy settings. You can read how Google uses this data at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com</a>.</p>
   <h2>Questions</h2>
   <p>Message us on Instagram at <a href="https://www.instagram.com/amazonthedog__" rel="noopener">@amazonthedog__</a>.</p>
-  <p class="small">Last updated November 20, 2026.</p>
+  <p class="small">Last updated November 22, 2026.</p>
   <a class="btn" href="/">Back to Amazon the Dog</a>
 </main>
+<script src="/analytics-events.js" defer></script>
 </body>
 </html>

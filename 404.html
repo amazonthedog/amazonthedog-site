@@ -16,7 +16,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVWFMXMJ2"></script>
 <script>
   gtag('js', new Date());
-  gtag('config', 'G-HXVWFMXMJ2');
+  // Add ?ga_debug=1 to the URL to send a test visit to DebugView (kept out of reports by the Developer traffic filter)
+  gtag('config', 'G-HXVWFMXMJ2', /[?&]ga_debug=1\b/.test(location.search) ? { debug_mode: true } : {});
 </script>
 <title>Page not found · Amazon the Dog</title>
 <meta name="description" content="This page could not be found. Head back to Amazon the Dog.">
@@ -58,5 +59,6 @@ a.btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
   <p>The page you were looking for isn't here. Amazon is, though.</p>
   <a class="btn" href="/">Back to Amazon the Dog</a>
 </main>
+<script src="/analytics-events.js" defer></script>
 </body>
 </html>
