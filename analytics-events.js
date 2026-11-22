@@ -24,7 +24,12 @@
     'linkedin.com': 'linkedin'
   };
 
-  function send(name, params) { window.gtag('event', name, params || {}); }
+  // Test visits (?ga_debug=1): GA4 only honours debug_mode when it rides on each event
+  function send(name, params) {
+    params = params || {};
+    if (window.gaDebug) params.debug_mode = true;
+    window.gtag('event', name, params);
+  }
   function clean(s, n) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, n || 60); }
   function textOf(a) { return clean(a.textContent) || clean(a.getAttribute('aria-label')); }
 
