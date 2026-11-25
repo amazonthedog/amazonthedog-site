@@ -152,8 +152,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.3rem; text-decoration: none; }
 .mark .mini-disc { width: 30px; height: 12px; }
-.top nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
-.top nav a { text-decoration: none; font-weight: 500; font-size: var(--s1); color: var(--muted); }
+.top nav ul { list-style: none; display: flex; column-gap: 22px; margin: 0; padding: 0; flex-wrap: nowrap; }
+.top nav a { text-decoration: none; font-weight: 500; font-size: var(--s1); color: var(--muted); white-space: nowrap; }
 .top nav a:hover { color: var(--ink); }
 
 /* Frisbee drawn in CSS: concentric rings on a flattened disc */
@@ -363,6 +363,14 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
   .channels { grid-template-columns: 1fr 1fr; }
   .yt-grid { grid-template-columns: repeat(3, 1fr); }
 }
+/* Header menu: always one row, on every screen. Under 960px it sits on its own row under
+   the name, and its text shrinks just enough to fit (6 items on tablets, 4 on phones).
+   Each font-size line comes twice: vw for older browsers, cqw (the menu's own width) for the rest. */
+@media (max-width: 959px) {
+  .top nav { order: 3; width: 100%; container-type: inline-size; }
+  .top nav ul { column-gap: 18px; }
+  .top nav a { font-size: clamp(12px, calc((100vw - 122px) / 32.6), 14px); font-size: clamp(12px, calc((100cqw - 90px) / 32.6), 14px); }
+}
 @media (max-width: 880px) {
   .hero .wrap, .guide .wrap, .meet .wrap, .book .wrap { grid-template-columns: 1fr; }
   .hero-photo { max-width: 420px; margin-inline: auto; width: 100%; }
@@ -372,7 +380,6 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
   .rules { grid-template-columns: 1fr; }
   .book-cover { max-width: 380px; }
   .pack-dog { display: none; }
-  .top nav { order: 3; width: 100%; }
 }
 @media (max-width: 720px) {
   .peek-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-inline: -16px; padding-inline: 16px; }
@@ -389,7 +396,8 @@ footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
   .bubble { right: 4px; bottom: 20px; max-width: 170px; font-size: var(--s1); }
   .flying-disc { width: 96px; height: 35px; left: -10px; top: -14px; }
   .top .btn { display: none; }
-  .top nav ul { gap: 6px 16px; }
+  .top nav ul { justify-content: space-between; column-gap: 10px; }
+  .top nav a { font-size: clamp(9px, calc((100vw - 62px) / 21.94), 15px); font-size: clamp(9px, calc((100cqw - 30px) / 21.94), 15px); }
   .nav-extra { display: none; }
   .btn { width: 100%; justify-content: center; }
   .btns-more { display: grid; grid-template-columns: repeat(2, 1fr); }
