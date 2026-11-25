@@ -1,9 +1,11 @@
 /*
- * amazonthedog.com — GA4 event tracking (v4, Nov 22 2026). Loaded on every page.
+ * amazonthedog.com — GA4 event tracking (v5, Nov 23 2026). Loaded on every page.
  *
  * Clicks:    follow_click, invite_click, book_click, calendar_click, event_link_click,
- *            reel_click, short_click, nav_click, link_click (every other link), image_click,
- *            rage_click. Middle-clicks count too.
+ *            reel_click, short_click, nav_click, gallery_click, link_click (every other link),
+ *            image_click, rage_click. Middle-clicks count too.
+ * Gallery:   /gallery/ sends photo_open, photo_view, photo_close, photo_love, photo_unlove,
+ *            photo_share and gallery_filter through window.atdTrack (below).
  * Reading:   section_view, section_engaged (5 s on screen), scroll_depth (25/50/75/100 %),
  *            engaged_time (15/30/60/120/300 s on screen), page_exit (where they left,
  *            how far, how long, load speed).
@@ -30,6 +32,11 @@
     if (window.gaDebug) params.debug_mode = true;
     window.gtag('event', name, params);
   }
+  // Page scripts (the photo gallery) send their own events through this, and anything they
+  // sent before this file loaded is waiting in atdQueue
+  window.atdTrack = send;
+  (window.atdQueue || []).forEach(function (q) { send(q[0], q[1]); });
+  window.atdQueue = [];
   function clean(s, n) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, n || 60); }
   function textOf(a) { return clean(a.textContent) || clean(a.getAttribute('aria-label')); }
 
@@ -103,6 +110,12 @@
       return;
     }
 
+    // The photo gallery (menu, hero, "See all her photos", footer)
+    if (url.origin === window.location.origin && /^\/gallery(\/|\.html)?$/.test(url.pathname)) {
+      send('gallery_click', { button_location: where, button_text: textOf(a) });
+      return;
+    }
+
     // "Invite Amazon": a direct message on Instagram
     if (host === 'ig.me') {
       send('invite_click', { button_location: where, button_text: textOf(a) });
@@ -170,11 +183,13 @@
     var a = e.target.closest ? e.target.closest('a[href]') : null;
     if (a) { onLink(a); } else {
       var img = imageOf(e.target);
-      if (img && e.type === 'click') {
+      // Gallery photos are buttons that open the viewer, which sends its own photo_open / photo_view
+      if (img && e.type === 'click' && !img.closest('button, dialog')) {
         send('image_click', { image_alt: clean(img.getAttribute('alt'), 80), button_location: placeOf(img) });
       }
     }
-    if (e.type === 'click') rageCheck(e);
+    // Quick taps on the viewer's arrows, or on a heart, are play, not frustration
+    if (e.type === 'click' && !(e.target.closest && e.target.closest('dialog, [aria-pressed]'))) rageCheck(e);
   }
   document.addEventListener('click', onClick, true);
   document.addEventListener('auxclick', onClick, true);
