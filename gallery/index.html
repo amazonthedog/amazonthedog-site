@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Google tag (GA4). Custom events: /analytics-events.js -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']
+  });
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVWFMXMJ2"></script>
+<script>
+  gtag('js', new Date());
+  // Add ?ga_debug=1 to the URL to send a test visit to DebugView (kept out of reports by the Developer traffic filter)
+  window.gaDebug = /[?&]ga_debug=1\b/.test(location.search);
+  gtag('config', 'G-HXVWFMXMJ2', window.gaDebug ? { send_page_view: false } : {});
+  if (window.gaDebug) gtag('event', 'page_view', { debug_mode: true }); // the flag only sticks per event
+</script>
+<title>Photos · Amazon the Dog</title>
+<meta name="description" content="Photos of Amazon the Dog, a gentle black golden shepherd: frisbee, snow, naps, car rides and a lot of tongue. Tap the heart on your favorites.">
+<link rel="canonical" href="https://amazonthedog.com/gallery/">
+<meta name="theme-color" content="#F6F1E7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="/fonts/fredoka-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amazon the Dog">
+<meta property="og:title" content="Photos of Amazon the Dog">
+<meta property="og:description" content="Just her, being herself. Tap the heart on your favorites.">
+<meta property="og:url" content="https://amazonthedog.com/gallery/">
+<meta property="og:image" content="https://amazonthedog.com/img/gallery/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amazon the Dog, a black golden shepherd, grinning up at a frisbee">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photos of Amazon the Dog">
+<meta name="twitter:description" content="Just her, being herself. Tap the heart on your favorites.">
+<meta name="twitter:image" content="https://amazonthedog.com/img/gallery/og.jpg">
+<style>
+@font-face { font-family: "Fredoka"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/fredoka-latin-var.woff2) format("woff2"); unicode-range: U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122; }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400 600; font-display: swap; src: url(/fonts/inter-latin-var.woff2) format("woff2"); unicode-range: U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2022,U+2026,U+2032-2033,U+20AC,U+2122; }
+@font-face { font-family: "Fredoka Fallback"; font-weight: 300 500; src: local("Arial"), local("ArialMT"), local("Liberation Sans"); size-adjust: 100.06%; ascent-override: 97.34%; descent-override: 23.59%; line-gap-override: 0%; }
+@font-face { font-family: "Fredoka Fallback"; font-weight: 600 700; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"); size-adjust: 93.4%; ascent-override: 104.3%; descent-override: 25.3%; line-gap-override: 0%; }
+@font-face { font-family: "Inter Fallback"; src: local("Arial"), local("ArialMT"), local("Liberation Sans"); size-adjust: 106.23%; ascent-override: 91.22%; descent-override: 22.78%; line-gap-override: 0%; }
+:root {
+  --bg: #F6F1E7; --surface: #FFFBF3; --ink: #141414; --muted: #5B554B; --line: #E2D9C8;
+  --teal: #1FA3A3; --teal-strong: #137F80; --on-teal: #FFFFFF;
+  --green: #2F6B3F; --band: #2F6B3F; --on-band: #F6F1E7; --on-band-muted: #CFE0D1; --gold-on-band: #F5D98A;
+  --gold: #E3B23C; --pink: #E8457A; --pink-strong: #C4295E;
+  --photo-a: #2A2D2A; --solid: #141414; --on-solid: #F6F1E7;
+  --display: "Fredoka", "Fredoka Fallback", "Baloo 2", ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --s1: 0.875rem; --s2: 1rem; --s3: 1.125rem; --s4: 1.5rem; --s5: 2.25rem; --s6: clamp(2.6rem, 7vw, 4.5rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121412; --surface: #1A1E1B; --ink: #F3EEE3; --muted: #B6AFA2; --line: #2C322D;
+    --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414;
+    --green: #7DBB8C; --band: #1C3424; --on-band: #F3EEE3; --on-band-muted: #A9C7AF; --gold-on-band: #EBC15A;
+    --gold: #EBC15A; --pink: #F06A95; --pink-strong: #F488AB; --photo-a: #2F3430; --solid: #F3EEE3; --on-solid: #121412;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121412; --surface: #1A1E1B; --ink: #F3EEE3; --muted: #B6AFA2; --line: #2C322D;
+  --teal: #2BB8B8; --teal-strong: #2BB8B8; --on-teal: #0B1414;
+  --green: #7DBB8C; --band: #1C3424; --on-band: #F3EEE3; --on-band-muted: #A9C7AF; --gold-on-band: #EBC15A;
+  --gold: #EBC15A; --pink: #F06A95; --pink-strong: #F488AB; --photo-a: #2F3430; --solid: #F3EEE3; --on-solid: #121412;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--s2); line-height: 1.6; overflow-x: hidden; }
+h1, h2 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+button { font: inherit; color: inherit; }
+.wrap { max-width: 1240px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--display); font-weight: 500; font-size: var(--s1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.band { background: var(--band); color: var(--on-band); }
+.band .eyebrow { color: var(--gold-on-band); }
+
+/* Header (same as the homepage) */
+.top { padding-block: 18px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.3rem; text-decoration: none; }
+.disc { border-radius: 50%; background: radial-gradient(ellipse at 50% 50%, var(--teal) 0 30%, color-mix(in srgb, #fff 45%, var(--teal)) 31% 34%, var(--teal) 35% 60%, color-mix(in srgb, #000 22%, var(--teal)) 61% 66%, var(--teal) 67% 100%); box-shadow: 0 10px 18px -10px rgba(0,0,0,.45); }
+.mini-disc { width: 30px; height: 12px; }
+.top nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
+.top nav a { text-decoration: none; font-weight: 500; font-size: var(--s1); color: var(--muted); }
+.top nav a:hover, .top nav a[aria-current] { color: var(--ink); }
+.top nav a[aria-current] { box-shadow: inset 0 -2px 0 var(--teal); }
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: var(--s3); text-decoration: none; padding: 14px 22px; border-radius: 999px; border: 0; cursor: pointer; transition: transform .15s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-ig { background: var(--teal-strong); color: var(--on-teal); box-shadow: 0 6px 0 -2px color-mix(in srgb, var(--teal-strong) 45%, transparent); }
+.btn-yt { background: var(--solid); color: var(--on-solid); }
+.band .btn-yt { background: var(--on-band); color: var(--band); }
+.btn-alt { font-size: var(--s2); padding: 10px 18px; background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.band .btn-alt { color: var(--on-band); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--on-band) 45%, transparent); }
+
+/* Intro */
+.intro { padding-block: clamp(20px, 4vw, 48px) 24px; }
+.intro .wrap { display: grid; gap: 14px; }
+.intro h1 { font-size: var(--s6); font-weight: 700; }
+.intro .lede { font-size: var(--s3); color: var(--muted); max-width: 58ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip { cursor: pointer; border: 0; border-radius: 999px; padding: 8px 14px; font-family: var(--display); font-weight: 600; font-size: var(--s1); background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--line); }
+.chip span { color: var(--muted); font-weight: 500; margin-left: 2px; }
+.chip[aria-pressed="true"] { background: var(--teal-strong); color: var(--on-teal); box-shadow: none; }
+.chip[aria-pressed="true"] span { color: inherit; opacity: .8; }
+
+/* The grid */
+.photos { padding-bottom: clamp(56px, 8vw, 96px); }
+.grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.tile { position: relative; background: var(--surface); border-radius: 14px; padding: 8px 8px 10px; box-shadow: 0 14px 30px -22px rgba(20,20,20,.6); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.tile[hidden] { display: none; }
+.open { display: block; width: 100%; padding: 0; border: 0; background: var(--photo-a); border-radius: 8px; overflow: hidden; aspect-ratio: 4 / 5; cursor: zoom-in; }
+.open img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.open:hover img { transform: scale(1.03); }
+.cap { font-family: var(--display); font-size: var(--s1); line-height: 1.35; color: var(--muted); padding: 0 40px 0 4px; min-height: 2.7em; }
+.love { position: absolute; right: 10px; bottom: 8px; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; cursor: pointer; color: var(--muted); }
+.love svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform .15s ease; }
+.love[aria-pressed="true"] { color: var(--pink); }
+.love[aria-pressed="true"] svg { fill: currentColor; }
+.love.pop svg { animation: pop .35s ease; }
+@keyframes pop { 50% { transform: scale(1.35); } }
+.noscript { margin-top: 18px; color: var(--muted); font-size: var(--s1); }
+
+/* More of her */
+.more { padding-block: clamp(56px, 8vw, 96px); }
+.more .wrap { display: grid; gap: 20px; justify-items: start; }
+.more h2 { font-size: var(--s5); }
+.more p.lede { color: var(--on-band-muted); font-size: var(--s3); max-width: 52ch; }
+
+/* Footer */
+footer { padding-block: 36px; font-size: var(--s1); color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; }
+footer .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+footer a { text-decoration: none; font-weight: 500; color: var(--ink); }
+
+/* Full-size viewer */
+.lb { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: rgba(8,10,8,.96); color: #F6F1E7; }
+.lb::backdrop { background: rgba(8,10,8,.96); }
+.lb[open] { display: grid; grid-template-rows: auto 1fr auto; }
+.lb-top { display: flex; justify-content: space-between; align-items: center; padding: 12px max(16px, env(safe-area-inset-left, 0px)); padding-top: max(12px, env(safe-area-inset-top, 0px)); }
+.lb-count { font-family: var(--display); font-weight: 600; font-size: var(--s1); letter-spacing: .06em; color: #CFE0D1; font-variant-numeric: tabular-nums; }
+.lb-x, .lb-nav { border: 0; background: rgba(255,255,255,.1); color: #fff; border-radius: 50%; width: 44px; height: 44px; display: grid; place-items: center; cursor: pointer; }
+.lb-x svg, .lb-nav svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.lb-stage { position: relative; min-height: 0; display: grid; place-items: center; touch-action: pan-y pinch-zoom; }
+.lb-stage img { max-width: calc(100vw - 32px); max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 6px; user-select: none; -webkit-user-drag: none; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); }
+.lb-prev { left: max(12px, env(safe-area-inset-left, 0px)); }
+.lb-next { right: max(12px, env(safe-area-inset-right, 0px)); }
+.lb-foot { display: grid; gap: 12px; justify-items: center; text-align: center; padding: 14px 16px; padding-bottom: max(18px, env(safe-area-inset-bottom, 0px)); }
+.lb-cap { font-family: var(--display); font-size: var(--s3); font-weight: 500; max-width: 46ch; }
+.lb-acts { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.lb-btn { display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer; border-radius: 999px; padding: 10px 18px; font-family: var(--display); font-weight: 600; background: rgba(255,255,255,.12); color: #fff; }
+.lb-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+.lb-btn.love-big[aria-pressed="true"] { background: #E8457A; }
+.lb-btn.love-big[aria-pressed="true"] svg { fill: currentColor; }
+.lb-note { font-size: var(--s1); color: #CFE0D1; min-height: 1.4em; }
+
+@media (max-width: 880px) { .top nav { order: 3; width: 100%; } }
+@media (max-width: 560px) {
+  .top .btn { display: none; }
+  .top nav ul { gap: 6px 16px; }
+  .nav-extra { display: none; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .tile { padding: 5px 5px 8px; border-radius: 12px; gap: 6px; }
+  .cap { font-size: .8125rem; padding-right: 30px; }
+  .love { right: 4px; bottom: 4px; }
+  .btn { width: 100%; justify-content: center; }
+  .lb-nav { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .open img, .love svg { transition: none; animation: none !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://amazonthedog.com/gallery/#page",
+  "url": "https://amazonthedog.com/gallery/",
+  "name": "Photos of Amazon the Dog",
+  "about": { "@id": "https://amazonthedog.com/#brand" },
+  "isPartOf": { "@id": "https://amazonthedog.com/#site" },
+  "primaryImageOfPage": "https://amazonthedog.com/img/gallery/og.jpg"
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="Amazon the Dog home"><span class="disc mini-disc" aria-hidden="true"></span>Amazon the Dog</a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="nav-extra"><a href="/#mission">The mission</a></li>
+        <li><a href="/#events">Where she'll be</a></li>
+        <li><a href="/#book">Her book</a></li>
+        <li><a href="/gallery/" aria-current="page">Photos</a></li>
+        <li><a href="/#follow">Follow along</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">Follow</a>
+  </div>
+</header>
+
+<main>
+  <!-- Photos of just her. Built by tools/build_gallery.py from gallery/photos.json: edit those, not this file. -->
+  <section class="photos" id="photos" aria-labelledby="photos-title">
+    <div class="intro">
+      <div class="wrap">
+        <p class="eyebrow">Photos · 34 and counting</p>
+        <h1 id="photos-title">Just her. Being herself.</h1>
+        <p class="lede">Frisbee, snow, naps and a lot of tongue. Tap a photo to see it big, and tap the heart on the ones you love.</p>
+        <div class="chips" role="group" aria-label="Show photos">
+          <button class="chip" type="button" data-tag="all" aria-pressed="true">All <span>34</span></button>
+          <button class="chip" type="button" data-tag="closeup" aria-pressed="false">Close-ups <span>7</span></button>
+          <button class="chip" type="button" data-tag="chill" aria-pressed="false">Naps &amp; couches <span>10</span></button>
+          <button class="chip" type="button" data-tag="frisbee" aria-pressed="false">Frisbee <span>4</span></button>
+          <button class="chip" type="button" data-tag="snow" aria-pressed="false">Snow <span>3</span></button>
+          <button class="chip" type="button" data-tag="dressed" aria-pressed="false">Dressed up <span>2</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <ul class="grid">
+        <li class="tile" data-tag="frisbee">
+          <button class="open" type="button" data-i="0" aria-label="See it big: Throw it. Throw it. Throw it."><img src="/img/gallery/frisbee-grin-720.webp" width="720" height="900" alt="Amazon, a black golden shepherd, grinning up at a frisbee that&#x27;s about to be thrown" fetchpriority="high" decoding="async"></button>
+          <p class="cap">Throw it. Throw it. Throw it.</p>
+          <button class="love" type="button" data-id="frisbee-grin" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="1" aria-label="See it big: Five out of five paws. I&#x27;m not getting up."><img src="/img/gallery/cream-couch-720.webp" width="720" height="960" alt="Amazon lying on a cream couch in a furniture store, tongue out, paws over the edge" decoding="async"></button>
+          <p class="cap">Five out of five paws. I&#x27;m not getting up.</p>
+          <button class="love" type="button" data-id="cream-couch" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="snow">
+          <button class="open" type="button" data-i="2" aria-label="See it big: Snow goes on the face. Everyone knows that."><img src="/img/gallery/snow-face-720.webp" width="720" height="900" alt="Amazon with snow all over her black face, looking at the camera" decoding="async"></button>
+          <p class="cap">Snow goes on the face. Everyone knows that.</p>
+          <button class="love" type="button" data-id="snow-face" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="frisbee">
+          <button class="open" type="button" data-i="3" aria-label="See it big: Found it. Not giving it back."><img src="/img/gallery/red-frisbee-field-720.webp" width="720" height="960" alt="Amazon standing in a sunny field holding a big red frisbee in her mouth" decoding="async"></button>
+          <p class="cap">Found it. Not giving it back.</p>
+          <button class="love" type="button" data-id="red-frisbee-field" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="4" aria-label="See it big: The sign only said the top bunk."><img src="/img/gallery/bunk-bed-720.webp" width="720" height="960" alt="Amazon sitting on the bottom bunk of a wooden bunk bed under a sign that asks people to keep off the top bunk" loading="lazy" decoding="async"></button>
+          <p class="cap">The sign only said the top bunk.</p>
+          <button class="love" type="button" data-id="bunk-bed" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="5" aria-label="See it big: Small enough for a shopping cart. Once."><img src="/img/gallery/puppy-cart-720.webp" width="700" height="875" alt="Amazon as a tiny black puppy riding in a store shopping cart" loading="lazy" decoding="async"></button>
+          <p class="cap">Small enough for a shopping cart. Once.</p>
+          <button class="love" type="button" data-id="puppy-cart" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="dressed">
+          <button class="open" type="button" data-i="6" aria-label="See it big: Two candles. One very long wait."><img src="/img/gallery/second-birthday-720.webp" width="720" height="900" alt="Amazon in a party hat behind a plate of birthday muffins with a number 2 candle" loading="lazy" decoding="async"></button>
+          <p class="cap">Two candles. One very long wait.</p>
+          <button class="love" type="button" data-id="second-birthday" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="7" aria-label="See it big: Table for one. I&#x27;ll have what you&#x27;re having."><img src="/img/gallery/dining-chair-720.webp" width="720" height="960" alt="Amazon sitting upright on a dining chair at a round white table in a furniture store" loading="lazy" decoding="async"></button>
+          <p class="cap">Table for one. I&#x27;ll have what you&#x27;re having.</p>
+          <button class="love" type="button" data-id="dining-chair" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="8" aria-label="See it big: You looked at me. Now we&#x27;re friends."><img src="/img/gallery/portrait-720.webp" width="720" height="693" alt="Close-up of Amazon looking straight at the camera on the grass" loading="lazy" decoding="async"></button>
+          <p class="cap">You looked at me. Now we&#x27;re friends.</p>
+          <button class="love" type="button" data-id="portrait" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="car">
+          <button class="open" type="button" data-i="9" aria-label="See it big: Copilot. Mostly pillow."><img src="/img/gallery/copilot-720.webp" width="720" height="960" alt="Amazon resting her head on her dad&#x27;s shoulder in the car" loading="lazy" decoding="async"></button>
+          <p class="cap">Copilot. Mostly pillow.</p>
+          <button class="love" type="button" data-id="copilot" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="10" aria-label="See it big: Do not disturb. Chewing."><img src="/img/gallery/chew-time-720.webp" width="720" height="960" alt="Amazon lying on a wood floor, holding a long chew in her paws" loading="lazy" decoding="async"></button>
+          <p class="cap">Do not disturb. Chewing.</p>
+          <button class="love" type="button" data-id="chew-time" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="snow">
+          <button class="open" type="button" data-i="11" aria-label="See it big: More snow, please."><img src="/img/gallery/snow-mouth-720.webp" width="720" height="900" alt="Amazon in the snow with her mouth open and snow on her face" loading="lazy" decoding="async"></button>
+          <p class="cap">More snow, please.</p>
+          <button class="love" type="button" data-id="snow-mouth" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="12" aria-label="See it big: This one passes the nap test."><img src="/img/gallery/nap-test-720.webp" width="720" height="960" alt="Amazon resting her chin on a light gray couch cushion, eyes heavy" loading="lazy" decoding="async"></button>
+          <p class="cap">This one passes the nap test.</p>
+          <button class="love" type="button" data-id="nap-test" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="13" aria-label="See it big: Official title: Squirrelinator."><img src="/img/gallery/night-grin-720.webp" width="720" height="900" alt="Close-up of Amazon grinning at night" loading="lazy" decoding="async"></button>
+          <p class="cap">Official title: Squirrelinator.</p>
+          <button class="love" type="button" data-id="night-grin" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="14" aria-label="See it big: Framed. Finally."><img src="/img/gallery/bone-frame-720.webp" width="720" height="960" alt="Amazon sitting in the grass behind a big blue photo frame decorated with dog bones" loading="lazy" decoding="async"></button>
+          <p class="cap">Framed. Finally.</p>
+          <button class="love" type="button" data-id="bone-frame" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="dressed">
+          <button class="open" type="button" data-i="15" aria-label="See it big: I am a pumpkin. Please act surprised."><img src="/img/gallery/pumpkin-720.webp" width="720" height="900" alt="Amazon sitting in the grass in an orange pumpkin costume" loading="lazy" decoding="async"></button>
+          <p class="cap">I am a pumpkin. Please act surprised.</p>
+          <button class="love" type="button" data-id="pumpkin" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="16" aria-label="See it big: Corduroy. Scratchy. Perfect."><img src="/img/gallery/corduroy-720.webp" width="720" height="960" alt="Amazon lying on a cream corduroy sofa, happy and panting, store lights behind her" loading="lazy" decoding="async"></button>
+          <p class="cap">Corduroy. Scratchy. Perfect.</p>
+          <button class="love" type="button" data-id="corduroy" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="frisbee">
+          <button class="open" type="button" data-i="17" aria-label="See it big: Here it comes. Best part of my day."><img src="/img/gallery/frisbee-ready-720.webp" width="720" height="900" alt="Amazon sitting on the grass with a big grin, a red frisbee about to be thrown" loading="lazy" decoding="async"></button>
+          <p class="cap">Here it comes. Best part of my day.</p>
+          <button class="love" type="button" data-id="frisbee-ready" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="18" aria-label="See it big: Sun on my back. Grass under my paws."><img src="/img/gallery/sunny-grin-720.webp" width="720" height="900" alt="Amazon sitting in sunny grass with a big open-mouth grin" loading="lazy" decoding="async"></button>
+          <p class="cap">Sun on my back. Grass under my paws.</p>
+          <button class="love" type="button" data-id="sunny-grin" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="frisbee">
+          <button class="open" type="button" data-i="19" aria-label="See it big: My tail is ready. My tongue is ready. Are you?"><img src="/img/gallery/tongue-wait-720.webp" width="720" height="900" alt="Amazon sitting on the grass, tongue out, looking up at a red frisbee" loading="lazy" decoding="async"></button>
+          <p class="cap">My tail is ready. My tongue is ready. Are you?</p>
+          <button class="love" type="button" data-id="tongue-wait" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="20" aria-label="See it big: I tested the bed. The bed won."><img src="/img/gallery/bed-test-720.webp" width="720" height="960" alt="Amazon asleep with her chin on a white comforter in a furniture store" loading="lazy" decoding="async"></button>
+          <p class="cap">I tested the bed. The bed won.</p>
+          <button class="love" type="button" data-id="bed-test" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="snow">
+          <button class="open" type="button" data-i="21" aria-label="See it big: I asked for snow. It worked."><img src="/img/gallery/snow-walk-720.webp" width="720" height="900" alt="Amazon walking through the snow, looking up at the camera" loading="lazy" decoding="async"></button>
+          <p class="cap">I asked for snow. It worked.</p>
+          <button class="love" type="button" data-id="snow-walk" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="22" aria-label="See it big: Candy corn toy. The only candy I&#x27;m allowed."><img src="/img/gallery/candy-corn-720.webp" width="720" height="900" alt="Amazon at night eyeing a candy corn squeaky toy in someone&#x27;s hand" loading="lazy" decoding="async"></button>
+          <p class="cap">Candy corn toy. The only candy I&#x27;m allowed.</p>
+          <button class="love" type="button" data-id="candy-corn" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="23" aria-label="See it big: I&#x27;m not begging. I&#x27;m just looking."><img src="/img/gallery/sweet-stare-720.webp" width="720" height="900" alt="Close-up of Amazon on the grass, looking up with sweet eyes" loading="lazy" decoding="async"></button>
+          <p class="cap">I&#x27;m not begging. I&#x27;m just looking.</p>
+          <button class="love" type="button" data-id="sweet-stare" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="24" aria-label="See it big: Sitting nicely. Treat now?"><img src="/img/gallery/sitting-pretty-720.webp" width="720" height="900" alt="Amazon sitting on the grass with her tongue out and her pink leash on" loading="lazy" decoding="async"></button>
+          <p class="cap">Sitting nicely. Treat now?</p>
+          <button class="love" type="button" data-id="sitting-pretty" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="25" aria-label="See it big: Wake me when it&#x27;s time to go."><img src="/img/gallery/sofa-arm-720.webp" width="720" height="960" alt="Amazon with her chin draped over a sofa arm, eyes half shut" loading="lazy" decoding="async"></button>
+          <p class="cap">Wake me when it&#x27;s time to go.</p>
+          <button class="love" type="button" data-id="sofa-arm" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="26" aria-label="See it big: Closer. You missed a spot behind my ears."><img src="/img/gallery/close-grin-720.webp" width="720" height="900" alt="Close-up of Amazon grinning at the camera" loading="lazy" decoding="async"></button>
+          <p class="cap">Closer. You missed a spot behind my ears.</p>
+          <button class="love" type="button" data-id="close-grin" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="27" aria-label="See it big: You said walk. I heard walk."><img src="/img/gallery/walk-ears-720.webp" width="720" height="900" alt="Amazon on the grass, looking up at the camera with a smile" loading="lazy" decoding="async"></button>
+          <p class="cap">You said walk. I heard walk.</p>
+          <button class="love" type="button" data-id="walk-ears" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="28" aria-label="See it big: Fresh from the bath. Grass next."><img src="/img/gallery/fresh-bath-720.webp" width="720" height="900" alt="Amazon damp and fluffy right after a bath" loading="lazy" decoding="async"></button>
+          <p class="cap">Fresh from the bath. Grass next.</p>
+          <button class="love" type="button" data-id="fresh-bath" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="29" aria-label="See it big: Tongue out. Heart full."><img src="/img/gallery/tongue-out-720.webp" width="720" height="900" alt="Amazon on the grass with her tongue out" loading="lazy" decoding="async"></button>
+          <p class="cap">Tongue out. Heart full.</p>
+          <button class="love" type="button" data-id="tongue-out" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile">
+          <button class="open" type="button" data-i="30" aria-label="See it big: Sitting pretty. Waiting for the next smile."><img src="/img/gallery/waiting-smile-720.webp" width="720" height="900" alt="Amazon sitting in the sun on the grass, smiling" loading="lazy" decoding="async"></button>
+          <p class="cap">Sitting pretty. Waiting for the next smile.</p>
+          <button class="love" type="button" data-id="waiting-smile" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="closeup">
+          <button class="open" type="button" data-i="31" aria-label="See it big: Is that for me? It&#x27;s for me."><img src="/img/gallery/silly-grin-720.webp" width="720" height="900" alt="Amazon looking up at the camera with a silly grin" loading="lazy" decoding="async"></button>
+          <p class="cap">Is that for me? It&#x27;s for me.</p>
+          <button class="love" type="button" data-id="silly-grin" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="32" aria-label="See it big: Just lying here being gentle."><img src="/img/gallery/grass-rest-720.webp" width="720" height="900" alt="Amazon lying in the grass with soft, sweet eyes" loading="lazy" decoding="async"></button>
+          <p class="cap">Just lying here being gentle.</p>
+          <button class="love" type="button" data-id="grass-rest" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+        <li class="tile" data-tag="chill">
+          <button class="open" type="button" data-i="33" aria-label="See it big: Patio day. Best day."><img src="/img/gallery/patio-day-720.webp" width="720" height="900" alt="Amazon lying on a patio with a happy open-mouth smile" loading="lazy" decoding="async"></button>
+          <p class="cap">Patio day. Best day.</p>
+          <button class="love" type="button" data-id="patio-day" aria-pressed="false" aria-label="Love this photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
+        </li>
+      </ul>
+      <noscript><p class="noscript">Turn on JavaScript to see each photo full size.</p></noscript>
+    </div>
+  </section>
+
+  <section class="band more" id="more" aria-labelledby="more-title">
+    <div class="wrap">
+      <p class="eyebrow">Want more of her?</p>
+      <h2 id="more-title">New photos and videos every day.</h2>
+      <p class="lede">Reels most days on Instagram, Shorts on YouTube, and something different on every app.</p>
+      <div class="btns">
+        <a class="btn btn-ig" href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Follow on Instagram</a>
+        <a class="btn btn-yt" href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M6 5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4zM10 9v6l5-3z"/></svg>
+          Watch on YouTube</a>
+      </div>
+      <a class="btn btn-alt" href="/">Back to the homepage</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Amazon the Dog · Shepherd strength. Golden heart.</span>
+    <span class="links">
+      <a href="https://www.instagram.com/amazonthedog__" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@AmazonTheDogDelivers" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@amazonthedog" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/amazonthedog" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.snapchat.com/@amazonthedog" target="_blank" rel="noopener">Snapchat</a>
+      <a href="https://www.linkedin.com/company/amazonthedog" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+    <span>A family dog. Not affiliated with Amazon.com, Inc. · <a href="/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <div class="lb-top">
+    <span class="lb-count" id="lb-count"></span>
+    <button class="lb-x" type="button" id="lb-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="lb-stage" id="lb-stage">
+    <img id="lb-img" alt="">
+    <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="lb-foot">
+    <p class="lb-cap" id="lb-cap"></p>
+    <div class="lb-acts">
+      <button class="lb-btn love-big" type="button" id="lb-love" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg><span>Love it</span></button>
+      <button class="lb-btn" type="button" id="lb-share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span>Send to a friend</span></button>
+    </div>
+    <p class="lb-note" id="lb-note" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<script type="application/json" id="photo-data">[{"id": "frisbee-grin", "tag": "frisbee", "cap": "Throw it. Throw it. Throw it.", "alt": "Amazon, a black golden shepherd, grinning up at a frisbee that's about to be thrown", "w": 1080, "h": 1350}, {"id": "cream-couch", "tag": "chill", "cap": "Five out of five paws. I'm not getting up.", "alt": "Amazon lying on a cream couch in a furniture store, tongue out, paws over the edge", "w": 1200, "h": 1600}, {"id": "snow-face", "tag": "snow", "cap": "Snow goes on the face. Everyone knows that.", "alt": "Amazon with snow all over her black face, looking at the camera", "w": 1080, "h": 1350}, {"id": "red-frisbee-field", "tag": "frisbee", "cap": "Found it. Not giving it back.", "alt": "Amazon standing in a sunny field holding a big red frisbee in her mouth", "w": 1200, "h": 1600}, {"id": "bunk-bed", "tag": "chill", "cap": "The sign only said the top bunk.", "alt": "Amazon sitting on the bottom bunk of a wooden bunk bed under a sign that asks people to keep off the top bunk", "w": 1200, "h": 1600}, {"id": "puppy-cart", "tag": "", "cap": "Small enough for a shopping cart. Once.", "alt": "Amazon as a tiny black puppy riding in a store shopping cart", "w": 700, "h": 875}, {"id": "second-birthday", "tag": "dressed", "cap": "Two candles. One very long wait.", "alt": "Amazon in a party hat behind a plate of birthday muffins with a number 2 candle", "w": 1080, "h": 1350}, {"id": "dining-chair", "tag": "chill", "cap": "Table for one. I'll have what you're having.", "alt": "Amazon sitting upright on a dining chair at a round white table in a furniture store", "w": 1200, "h": 1600}, {"id": "portrait", "tag": "closeup", "cap": "You looked at me. Now we're friends.", "alt": "Close-up of Amazon looking straight at the camera on the grass", "w": 1080, "h": 1040}, {"id": "copilot", "tag": "car", "cap": "Copilot. Mostly pillow.", "alt": "Amazon resting her head on her dad's shoulder in the car", "w": 1200, "h": 1600}, {"id": "chew-time", "tag": "chill", "cap": "Do not disturb. Chewing.", "alt": "Amazon lying on a wood floor, holding a long chew in her paws", "w": 1200, "h": 1600}, {"id": "snow-mouth", "tag": "snow", "cap": "More snow, please.", "alt": "Amazon in the snow with her mouth open and snow on her face", "w": 1080, "h": 1350}, {"id": "nap-test", "tag": "chill", "cap": "This one passes the nap test.", "alt": "Amazon resting her chin on a light gray couch cushion, eyes heavy", "w": 1200, "h": 1600}, {"id": "night-grin", "tag": "closeup", "cap": "Official title: Squirrelinator.", "alt": "Close-up of Amazon grinning at night", "w": 1080, "h": 1350}, {"id": "bone-frame", "tag": "closeup", "cap": "Framed. Finally.", "alt": "Amazon sitting in the grass behind a big blue photo frame decorated with dog bones", "w": 1200, "h": 1600}, {"id": "pumpkin", "tag": "dressed", "cap": "I am a pumpkin. Please act surprised.", "alt": "Amazon sitting in the grass in an orange pumpkin costume", "w": 1080, "h": 1350}, {"id": "corduroy", "tag": "chill", "cap": "Corduroy. Scratchy. Perfect.", "alt": "Amazon lying on a cream corduroy sofa, happy and panting, store lights behind her", "w": 1200, "h": 1600}, {"id": "frisbee-ready", "tag": "frisbee", "cap": "Here it comes. Best part of my day.", "alt": "Amazon sitting on the grass with a big grin, a red frisbee about to be thrown", "w": 1080, "h": 1350}, {"id": "sunny-grin", "tag": "", "cap": "Sun on my back. Grass under my paws.", "alt": "Amazon sitting in sunny grass with a big open-mouth grin", "w": 1080, "h": 1350}, {"id": "tongue-wait", "tag": "frisbee", "cap": "My tail is ready. My tongue is ready. Are you?", "alt": "Amazon sitting on the grass, tongue out, looking up at a red frisbee", "w": 1080, "h": 1350}, {"id": "bed-test", "tag": "chill", "cap": "I tested the bed. The bed won.", "alt": "Amazon asleep with her chin on a white comforter in a furniture store", "w": 1200, "h": 1600}, {"id": "snow-walk", "tag": "snow", "cap": "I asked for snow. It worked.", "alt": "Amazon walking through the snow, looking up at the camera", "w": 1080, "h": 1350}, {"id": "candy-corn", "tag": "", "cap": "Candy corn toy. The only candy I'm allowed.", "alt": "Amazon at night eyeing a candy corn squeaky toy in someone's hand", "w": 1080, "h": 1350}, {"id": "sweet-stare", "tag": "closeup", "cap": "I'm not begging. I'm just looking.", "alt": "Close-up of Amazon on the grass, looking up with sweet eyes", "w": 1080, "h": 1350}, {"id": "sitting-pretty", "tag": "", "cap": "Sitting nicely. Treat now?", "alt": "Amazon sitting on the grass with her tongue out and her pink leash on", "w": 1080, "h": 1350}, {"id": "sofa-arm", "tag": "chill", "cap": "Wake me when it's time to go.", "alt": "Amazon with her chin draped over a sofa arm, eyes half shut", "w": 1200, "h": 1600}, {"id": "close-grin", "tag": "closeup", "cap": "Closer. You missed a spot behind my ears.", "alt": "Close-up of Amazon grinning at the camera", "w": 1080, "h": 1350}, {"id": "walk-ears", "tag": "", "cap": "You said walk. I heard walk.", "alt": "Amazon on the grass, looking up at the camera with a smile", "w": 1080, "h": 1350}, {"id": "fresh-bath", "tag": "closeup", "cap": "Fresh from the bath. Grass next.", "alt": "Amazon damp and fluffy right after a bath", "w": 1080, "h": 1350}, {"id": "tongue-out", "tag": "", "cap": "Tongue out. Heart full.", "alt": "Amazon on the grass with her tongue out", "w": 1080, "h": 1350}, {"id": "waiting-smile", "tag": "", "cap": "Sitting pretty. Waiting for the next smile.", "alt": "Amazon sitting in the sun on the grass, smiling", "w": 1080, "h": 1350}, {"id": "silly-grin", "tag": "closeup", "cap": "Is that for me? It's for me.", "alt": "Amazon looking up at the camera with a silly grin", "w": 1080, "h": 1350}, {"id": "grass-rest", "tag": "chill", "cap": "Just lying here being gentle.", "alt": "Amazon lying in the grass with soft, sweet eyes", "w": 1080, "h": 1350}, {"id": "patio-day", "tag": "chill", "cap": "Patio day. Best day.", "alt": "Amazon lying on a patio with a happy open-mouth smile", "w": 1080, "h": 1350}]</script>
+<script>
+/* Gallery viewer. Events go through window.atdTrack (analytics-events.js):
+   photo_open, photo_view, photo_close, photo_love, photo_unlove, photo_share, gallery_filter. */
+(function () {
+  var photos = JSON.parse(document.getElementById('photo-data').textContent);
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.tile'));
+  var lb = document.getElementById('lb');
+  if (!lb || typeof lb.showModal !== 'function') return;
+  var img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap');
+  var count = document.getElementById('lb-count'), note = document.getElementById('lb-note');
+  var loveBig = document.getElementById('lb-love');
+  var cur = -1, order = photos.map(function (_, i) { return i; }), viewed = {}, opened = false;
+
+  // analytics-events.js loads after this script; anything sent before it arrives waits in atdQueue
+  function track(name, params) {
+    if (window.atdTrack) window.atdTrack(name, params);
+    else (window.atdQueue = window.atdQueue || []).push([name, params]);
+  }
+  function info(i, extra) {
+    var p = photos[i], o = { photo_id: p.id, photo_tag: p.tag || 'none', position: i + 1 };
+    for (var k in extra) o[k] = extra[k];
+    return o;
+  }
+
+  // Hearts live only in this browser (localStorage); nothing about them leaves the device but the GA event
+  var loves = {};
+  try { (JSON.parse(localStorage.getItem('atd_loves') || '[]') || []).forEach(function (id) { loves[id] = true; }); } catch (e) {}
+  function saveLoves() { try { localStorage.setItem('atd_loves', JSON.stringify(Object.keys(loves))); } catch (e) {} }
+  function paintLoves() {
+    Array.prototype.forEach.call(document.querySelectorAll('.love[data-id]'), function (b) {
+      b.setAttribute('aria-pressed', loves[b.getAttribute('data-id')] ? 'true' : 'false');
+    });
+    if (cur >= 0) loveBig.setAttribute('aria-pressed', loves[photos[cur].id] ? 'true' : 'false');
+  }
+  function toggleLove(i, where, btn) {
+    var id = photos[i].id, on = !loves[id];
+    if (on) loves[id] = true; else delete loves[id];
+    saveLoves(); paintLoves();
+    if (btn && on) { btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop'); }
+    track(on ? 'photo_love' : 'photo_unlove', info(i, { button_location: where }));
+  }
+
+  // The viewer
+  function show(i, how) {
+    cur = i;
+    var p = photos[i];
+    img.src = '/img/gallery/' + p.id + '-1600.webp';
+    img.width = p.w; img.height = p.h; img.alt = p.alt;
+    cap.textContent = p.cap;
+    var pos = order.indexOf(i);
+    count.textContent = (pos + 1) + ' / ' + order.length;
+    note.textContent = '';
+    paintLoves();
+    viewed[p.id] = true;
+    history.replaceState(null, '', '#p-' + p.id);
+    track(how === 'tap' || how === 'link' ? 'photo_open' : 'photo_view', info(i, { view_method: how }));
+    var next = order[(pos + 1) % order.length];  // warm up the next one
+    if (next !== undefined) { var pre = new Image(); pre.src = '/img/gallery/' + photos[next].id + '-1600.webp'; }
+  }
+  function open(i, how) {
+    viewed = {}; opened = true;
+    lb.showModal();
+    show(i, how);
+  }
+  function step(d, how) {
+    var pos = order.indexOf(cur);
+    show(order[(pos + d + order.length) % order.length], how);
+  }
+  function finish() {
+    if (!opened) return;
+    opened = false;
+    track('photo_close', info(cur, { photos_viewed: Object.keys(viewed).length }));
+    history.replaceState(null, '', location.pathname + location.search);
+    var t = tiles[cur] && tiles[cur].querySelector('.open');
+    if (t) t.focus();
+  }
+  function shut() { lb.close(); finish(); }  // close first, so focus can return to the grid
+  lb.addEventListener('close', function () { if (!lb.open) finish(); });  // Esc key
+  document.getElementById('lb-x').addEventListener('click', shut);
+  document.getElementById('lb-prev').addEventListener('click', function () { step(-1, 'prev'); });
+  document.getElementById('lb-next').addEventListener('click', function () { step(1, 'next'); });
+  lb.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1, 'key'); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1, 'key'); }
+  });
+  // Swipe left / right on phones
+  var sx = null, sy = null;
+  var stage = document.getElementById('lb-stage');
+  stage.addEventListener('touchstart', function (e) { if (e.touches.length === 1) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    sx = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) step(dx < 0 ? 1 : -1, 'swipe');
+  });
+  // Tap the dark area around the photo to close
+  stage.addEventListener('click', function (e) { if (e.target === stage) shut(); });
+
+  loveBig.addEventListener('click', function () { toggleLove(cur, 'viewer', loveBig); });
+
+  document.getElementById('lb-share').addEventListener('click', function () {
+    var p = photos[cur];
+    var url = 'https://amazonthedog.com/gallery/#p-' + p.id;
+    if (navigator.share) {
+      navigator.share({ title: 'Amazon the Dog', text: p.cap, url: url }).then(function () {
+        track('photo_share', info(cur, { share_method: 'native' }));
+      }).catch(function () {});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        note.textContent = 'Link copied. Paste it to a friend.';
+        track('photo_share', info(cur, { share_method: 'copy' }));
+      }).catch(function () { note.textContent = url; });
+    } else {
+      note.textContent = url;
+    }
+  });
+
+  // Grid: open a photo, or heart it
+  tiles.forEach(function (t) {
+    var b = t.querySelector('.open'), h = t.querySelector('.love');
+    var i = +b.getAttribute('data-i');
+    b.addEventListener('click', function () { open(i, 'tap'); });
+    h.addEventListener('click', function () { toggleLove(i, 'grid', h); });
+  });
+
+  // Filter chips
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var tag = c.getAttribute('data-tag');
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      order = [];
+      tiles.forEach(function (t, i) {
+        var show = tag === 'all' || t.getAttribute('data-tag') === tag;
+        t.hidden = !show;
+        if (show) order.push(i);
+      });
+      track('gallery_filter', { gallery_filter: tag, photo_count: order.length });
+    });
+  });
+
+  paintLoves();
+
+  // A shared link (/gallery/#p-snow-face) opens that photo
+  var m = location.hash.match(/^#p-([a-z0-9-]+)$/);
+  if (m) {
+    for (var i = 0; i < photos.length; i++) if (photos[i].id === m[1]) { open(i, 'link'); break; }
+  }
+})();
+</script>
+<script src="/analytics-events.js" defer></script>
+</body>
+</html>
