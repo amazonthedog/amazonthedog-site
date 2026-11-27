@@ -2,13 +2,15 @@
  * amazonthedog.com — GA4 event tracking (v5, Nov 23 2026). Loaded on every page.
  *
  * Clicks:    follow_click, invite_click, book_click, calendar_click, event_link_click,
- *            reel_click, short_click, nav_click, gallery_click, link_click (every other link),
+ *            reel_click, short_click, nav_click, gallery_click, music_click, link_click (every other link),
  *            image_click, rage_click. Middle-clicks count too.
  * Gallery:   /gallery/ sends photo_open, photo_view, photo_close, photo_love, photo_unlove,
  *            photo_share and gallery_filter through window.atdTrack (below).
  * Reading:   section_view, section_engaged (5 s on screen), scroll_depth (25/50/75/100 %),
  *            engaged_time (15/30/60/120/300 s on screen), page_exit (where they left,
  *            how far, how long, load speed).
+ * Music:     music_play (first play of each song), music_finish (played to the end), from the
+ *            SoundCloud players (iframe.sc-player) on the homepage and /music/.
  * Other:     text_copy, page_print, page_not_found, js_error; user property color_scheme.
  *
  * Needs the Google tag (gtag.js) in <head>. No personal data is sent: no names, emails,
@@ -23,7 +25,8 @@
     'tiktok.com': 'tiktok',
     'youtube.com': 'youtube',
     'snapchat.com': 'snapchat',
-    'linkedin.com': 'linkedin'
+    'linkedin.com': 'linkedin',
+    'soundcloud.com': 'soundcloud'
   };
 
   // Test visits (?ga_debug=1): GA4 only honours debug_mode when it rides on each event
@@ -113,6 +116,12 @@
     // The photo gallery (menu, hero, "See all her photos", footer)
     if (url.origin === window.location.origin && /^\/gallery(\/|\.html)?$/.test(url.pathname)) {
       send('gallery_click', { button_location: where, button_text: textOf(a) });
+      return;
+    }
+
+    // Her music page (menu, hero, "Hear all her songs", footer)
+    if (url.origin === window.location.origin && /^\/music(\/|\.html)?$/.test(url.pathname)) {
+      send('music_click', { button_location: where, button_text: textOf(a) });
       return;
     }
 
@@ -321,4 +330,30 @@
   }
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') onExit(); });
   window.addEventListener('pagehide', onExit);
+
+  // Music: SoundCloud players. The widget API reports plays from inside the player's frame.
+  var players = document.querySelectorAll('iframe.sc-player');
+  if (players.length) {
+    var api = document.createElement('script');
+    api.src = 'https://w.soundcloud.com/player/api.js';
+    api.async = true;
+    api.onload = function () {
+      if (!window.SC || !SC.Widget) return;
+      players.forEach(function (frame) {
+        var w = SC.Widget(frame), played = {}, where = placeOf(frame);
+        function withSong(cb) { w.getCurrentSound(function (snd) { if (snd) cb(clean(snd.title, 80)); }); }
+        w.bind(SC.Widget.Events.PLAY, function () {
+          withSong(function (title) {
+            if (played[title]) return;
+            played[title] = true;
+            send('music_play', { song_title: title, player_location: where });
+          });
+        });
+        w.bind(SC.Widget.Events.FINISH, function () {
+          withSong(function (title) { send('music_finish', { song_title: title, player_location: where }); });
+        });
+      });
+    };
+    document.head.appendChild(api);
+  }
 })();
