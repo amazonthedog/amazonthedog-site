@@ -1,16 +1,21 @@
 /*
- * amazonthedog.com — GA4 event tracking (v5, Nov 23 2026). Loaded on every page.
+ * amazonthedog.com — GA4 event tracking (v6, Nov 28 2026). Loaded on every page.
  *
- * Clicks:    follow_click, invite_click, book_click, calendar_click, event_link_click,
- *            reel_click, short_click, nav_click, gallery_click, music_click, link_click (every other link),
- *            image_click, rage_click. Middle-clicks count too.
+ * Every button: each click event carries cta_id, a readable name that is unique on the page:
+ *            page_section_action, e.g. home_hero_instagram, music_more_youtube, gallery_viewer_love.
+ *            The same button twice in one section gets _2, _3 in page order. data-cta="..." on a
+ *            link overrides the name. The page shows each link's name in data-cta-id (DevTools).
+ * Clicks:    follow_click (her own profiles only), invite_click, book_click, calendar_click,
+ *            event_link_click, reel_click, short_click, nav_click, gallery_click, music_click,
+ *            link_click (every other link), image_click, rage_click. Middle-clicks count too.
  * Gallery:   /gallery/ sends photo_open, photo_view, photo_close, photo_love, photo_unlove,
- *            photo_share and gallery_filter through window.atdTrack (below).
+ *            photo_share and gallery_filter through window.atdTrack (below adds their cta_id).
+ * Music:     the SoundCloud players (iframe.sc-player) on the homepage and /music/ send
+ *            music_play (first play of each song), music_progress (25/50/75 %), music_finish,
+ *            music_listen (seconds of each listening stretch) and music_share.
  * Reading:   section_view, section_engaged (5 s on screen), scroll_depth (25/50/75/100 %),
  *            engaged_time (15/30/60/120/300 s on screen), page_exit (where they left,
  *            how far, how long, load speed).
- * Music:     music_play (first play of each song), music_finish (played to the end), from the
- *            SoundCloud players (iframe.sc-player) on the homepage and /music/.
  * Other:     text_copy, page_print, page_not_found, js_error; user property color_scheme.
  *
  * Needs the Google tag (gtag.js) in <head>. No personal data is sent: no names, emails,
@@ -35,13 +40,33 @@
     if (window.gaDebug) params.debug_mode = true;
     window.gtag('event', name, params);
   }
-  // Page scripts (the photo gallery) send their own events through this, and anything they
-  // sent before this file loaded is waiting in atdQueue
-  window.atdTrack = send;
-  (window.atdQueue || []).forEach(function (q) { send(q[0], q[1]); });
-  window.atdQueue = [];
   function clean(s, n) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, n || 60); }
   function textOf(a) { return clean(a.textContent) || clean(a.getAttribute('aria-label')); }
+  function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 40); }
+
+  // Short page name for button names: home, gallery, music, privacy, 404 (a new page: its path)
+  var PAGE = /^Page not found/.test(document.title) ? '404'
+    : slug(window.location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '')) || 'home';
+
+  // Page scripts (the photo gallery) send their own events through this, and anything they
+  // sent before this file loaded is waiting in atdQueue. Their buttons get a cta_id here.
+  function pageEvent(name, params) {
+    params = params || {};
+    if (!params.cta_id) {
+      var id = '';
+      if (name === 'gallery_filter') id = 'filter_' + slug(params.gallery_filter);
+      else if (name === 'photo_open') id = params.view_method === 'tap' ? 'grid_photo' : ''; // a shared photo link isn't a button
+      else if (name === 'photo_view') id = 'viewer_' + slug(params.view_method);
+      else if (name === 'photo_close') id = 'viewer_close';
+      else if (name === 'photo_love' || name === 'photo_unlove') id = slug(params.button_location || 'grid') + (name === 'photo_love' ? '_love' : '_unlove');
+      else if (name === 'photo_share') id = 'viewer_share_' + slug(params.share_method);
+      if (id) params.cta_id = PAGE + '_' + id;
+    }
+    send(name, params);
+  }
+  window.atdTrack = pageEvent;
+  (window.atdQueue || []).forEach(function (q) { pageEvent(q[0], q[1]); });
+  window.atdQueue = [];
 
   // Where on the page an element sits: header, footer, the section's id / name class, or main
   function placeOf(el) {
@@ -77,58 +102,54 @@
 
   /* ---------- Clicks ---------- */
 
-  function onLink(a) {
+  // What a link does: [event name, its parameters, a short action word for the button name]
+  function classify(a) {
     var url;
-    try { url = new URL(a.href, window.location.href); } catch (err) { return; }
+    try { url = new URL(a.href, window.location.href); } catch (err) { return null; }
     var host = url.hostname.replace(/^www\./, '');
     var where = placeOf(a);
+    var internal = url.origin === window.location.origin;
 
     // Jump links inside the same page (menu, "See where she'll be", the smile-counter card)
-    if (url.origin === window.location.origin && url.pathname === window.location.pathname && url.hash.length > 1) {
-      send('nav_click', { nav_target: url.hash.slice(1), button_location: where, button_text: textOf(a) });
-      return;
+    if (internal && url.pathname === window.location.pathname && url.hash.length > 1) {
+      return ['nav_click', { nav_target: url.hash.slice(1), button_location: where, button_text: textOf(a) }, 'jump_' + slug(url.hash.slice(1))];
     }
 
     // Links on a "Where she'll be" event card: add to calendar, directions, details
     var ev = eventOf(a);
     if (ev) {
       if (host === 'calendar.google.com') {
-        send('calendar_click', { calendar_action: 'add_event', event_title: ev.event_title, event_date: ev.event_date, button_location: where });
-      } else {
-        var type = /(^|\.)google\.[a-z.]+$/.test(host) && url.pathname.indexOf('/maps') === 0 ? 'directions' : 'details';
-        send('event_link_click', { link_type: type, event_title: ev.event_title, event_date: ev.event_date });
+        return ['calendar_click', { calendar_action: 'add_event', event_title: ev.event_title, event_date: ev.event_date, button_location: where }, 'event_add_to_calendar'];
       }
-      return;
+      var type = /(^|\.)google\.[a-z.]+$/.test(host) && url.pathname.indexOf('/maps') === 0 ? 'directions' : 'details';
+      return ['event_link_click', { link_type: type, event_title: ev.event_title, event_date: ev.event_date }, 'event_' + type];
     }
 
     // Follow her whole calendar (Google, or Apple/Outlook via webcal)
     if (url.protocol === 'webcal:' || host === 'calendar.google.com') {
-      send('calendar_click', { calendar_action: url.protocol === 'webcal:' ? 'subscribe_ical' : 'subscribe_google', button_location: where });
-      return;
+      var how = url.protocol === 'webcal:' ? 'subscribe_ical' : 'subscribe_google';
+      return ['calendar_click', { calendar_action: how, button_location: where }, 'calendar_' + how];
     }
 
     // The Christmas book (Gumroad: free download or name your price)
     if (/(^|\.)gumroad\.com$/.test(host) || a.hasAttribute('data-book')) {
-      send('book_click', { book_option: a.getAttribute('data-book') || 'link', button_location: where, button_text: textOf(a) });
-      return;
+      var opt = a.getAttribute('data-book') || 'link';
+      return ['book_click', { book_option: opt, button_location: where, button_text: textOf(a) }, 'book_' + slug(opt)];
     }
 
     // The photo gallery (menu, hero, "See all her photos", footer)
-    if (url.origin === window.location.origin && /^\/gallery(\/|\.html)?$/.test(url.pathname)) {
-      send('gallery_click', { button_location: where, button_text: textOf(a) });
-      return;
+    if (internal && /^\/gallery(\/|\.html)?$/.test(url.pathname)) {
+      return ['gallery_click', { button_location: where, button_text: textOf(a) }, 'photos_page'];
     }
 
     // Her music page (menu, hero, "Hear all her songs", footer)
-    if (url.origin === window.location.origin && /^\/music(\/|\.html)?$/.test(url.pathname)) {
-      send('music_click', { button_location: where, button_text: textOf(a) });
-      return;
+    if (internal && /^\/music(\/|\.html)?$/.test(url.pathname)) {
+      return ['music_click', { button_location: where, button_text: textOf(a) }, 'music_page'];
     }
 
     // "Invite Amazon": a direct message on Instagram
     if (host === 'ig.me') {
-      send('invite_click', { button_location: where, button_text: textOf(a) });
-      return;
+      return ['invite_click', { button_location: where, button_text: textOf(a) }, 'invite'];
     }
 
     var platform = PLATFORMS[host];
@@ -136,28 +157,64 @@
       var reel = url.pathname.match(/^\/(?:reel|p)\/([^\/]+)/);
       if (reel) {
         var tiles = Array.prototype.slice.call(document.querySelectorAll('a.ig-tile'));
-        send('reel_click', { reel_id: reel[1], position: tiles.indexOf(a) + 1 });
-        return;
+        var rp = tiles.indexOf(a) + 1;
+        return ['reel_click', { reel_id: reel[1], position: rp }, 'reel_' + rp];
       }
       var short = platform === 'youtube' && url.pathname.match(/^\/shorts\/([^\/?]+)/);
       if (short) {
         var shorts = Array.prototype.slice.call(document.querySelectorAll('a.yt-tile'));
-        send('short_click', { short_id: short[1], position: shorts.indexOf(a) + 1 });
-        return;
+        var sp = shorts.indexOf(a) + 1;
+        return ['short_click', { short_id: short[1], position: sp }, 'short_' + sp];
       }
-      send('follow_click', { platform: platform, button_location: where, button_text: textOf(a) });
-      return;
+      // Her own profiles have "amazonthedog" in the address. Other pages on those sites
+      // (SoundCloud's privacy policy, say) are plain links below, not follows.
+      if (/amazonthedog/i.test(url.pathname)) {
+        return ['follow_click', { platform: platform, button_location: where, button_text: textOf(a) }, platform];
+      }
     }
 
     // Everything else: other pages on this site (Privacy, Back home) and any other website
-    var internal = url.origin === window.location.origin;
-    send('link_click', {
+    var action = internal
+      ? (slug(url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '')) || 'home') + (url.hash.length > 1 ? '_' + slug(url.hash.slice(1)) : '')
+      : 'out_' + slug(host.replace(/\.(com|org|net|io|me|co)$/, ''));
+    return ['link_click', {
       link_url: internal ? url.pathname + url.hash : (url.origin + url.pathname).slice(0, 100),
       link_domain: internal ? 'amazonthedog.com' : host,
       link_text: textOf(a),
       outbound: !internal,
       button_location: where
+    }, action];
+  }
+
+  // Button names (cta_id): page_section_action, unique on the page. Worked out once when the
+  // page loads (in page order) and kept on each link as data-cta-id.
+  function ctaBase(a, action) {
+    var own = a.getAttribute('data-cta');
+    if (own) return slug(own);
+    var sec = slug(placeOf(a));
+    // Say it once: her profile link inside the Instagram feed is home_instagram_profile, and
+    // "Hear all her songs" in the music section is home_music_page (not music_music_page)
+    if (action === sec) action = 'profile';
+    else if (action.indexOf(sec + '_') === 0) action = action.slice(sec.length + 1);
+    return PAGE + '_' + sec + '_' + action;
+  }
+  function nameButtons() {
+    var count = {};
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (el) {
+      var c = classify(el);
+      if (!c) return;
+      var base = ctaBase(el, c[2]);
+      count[base] = (count[base] || 0) + 1;
+      el.setAttribute('data-cta-id', count[base] > 1 ? base + '_' + count[base] : base);
     });
+  }
+  try { nameButtons(); } catch (err) { /* names fall back to the base name at click time */ }
+
+  function onLink(a) {
+    var c = classify(a);
+    if (!c) return;
+    c[1].cta_id = a.getAttribute('data-cta-id') || ctaBase(a, c[2]);
+    send(c[0], c[1]);
   }
 
   // Photos that aren't links (book pages, gallery): people tapping them expect something
@@ -331,8 +388,30 @@
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') onExit(); });
   window.addEventListener('pagehide', onExit);
 
-  // Music: SoundCloud players. The widget API reports plays from inside the player's frame.
-  var players = document.querySelectorAll('iframe.sc-player');
+  /* ---------- Music: the SoundCloud players ---------- */
+
+  // The widget API reports from inside the player's frame. Per player and song:
+  // music_play (first play), music_progress (25/50/75 %), music_finish, music_share, and
+  // music_listen with the seconds of each listening stretch (sent on pause, at the end of a
+  // song, and when the visitor leaves or switches away, so background listening counts too).
+  var players = Array.prototype.slice.call(document.querySelectorAll('iframe.sc-player'));
+  var listeners = [];
+  function flushListen(p) {
+    if (!p.since) return;
+    var secs = Math.round((Date.now() - p.since) / 1000);
+    p.since = 0;
+    if (secs >= 1) send('music_listen', { song_title: p.title || 'unknown', player_location: p.where, listen_seconds: secs });
+  }
+  function flushAll(restart) {
+    listeners.forEach(function (p) {
+      var on = !!p.since;
+      flushListen(p);
+      if (on && restart) p.since = Date.now();
+    });
+  }
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flushAll(true); });
+  window.addEventListener('pagehide', function () { flushAll(false); });
+
   if (players.length) {
     var api = document.createElement('script');
     api.src = 'https://w.soundcloud.com/player/api.js';
@@ -340,17 +419,42 @@
     api.onload = function () {
       if (!window.SC || !SC.Widget) return;
       players.forEach(function (frame) {
-        var w = SC.Widget(frame), played = {}, where = placeOf(frame);
+        var w = SC.Widget(frame);
+        var p = { where: placeOf(frame), title: '', since: 0, played: {}, marks: {} };
+        var cta = PAGE + '_' + slug(p.where) + '_player';
+        listeners.push(p);
         function withSong(cb) { w.getCurrentSound(function (snd) { if (snd) cb(clean(snd.title, 80)); }); }
         w.bind(SC.Widget.Events.PLAY, function () {
+          if (!p.since) p.since = Date.now(); // the player can report PLAY twice as a song starts
           withSong(function (title) {
-            if (played[title]) return;
-            played[title] = true;
-            send('music_play', { song_title: title, player_location: where });
+            if (p.since && p.title && title !== p.title) { flushListen(p); p.since = Date.now(); } // picked another song mid-play
+            p.title = title;
+            if (p.played[title]) return;
+            p.played[title] = true;
+            w.getCurrentSoundIndex(function (n) {
+              send('music_play', { song_title: title, player_location: p.where, position: (typeof n === 'number' ? n + 1 : 0), cta_id: cta + '_play' });
+            });
           });
         });
+        w.bind(SC.Widget.Events.PLAY_PROGRESS, function (e) {
+          if (!p.title || !e || typeof e.relativePosition !== 'number') return;
+          var done = p.marks[p.title] = p.marks[p.title] || {};
+          [25, 50, 75].forEach(function (m) {
+            if (e.relativePosition * 100 >= m && !done[m]) {
+              done[m] = true;
+              send('music_progress', { song_title: p.title, player_location: p.where, song_percent: m });
+            }
+          });
+        });
+        w.bind(SC.Widget.Events.PAUSE, function () { flushListen(p); });
         w.bind(SC.Widget.Events.FINISH, function () {
-          withSong(function (title) { send('music_finish', { song_title: title, player_location: where }); });
+          // By now the player has moved on to the next song, so use the one that was playing
+          var title = p.title;
+          flushListen(p);
+          if (title) send('music_finish', { song_title: title, player_location: p.where });
+        });
+        w.bind(SC.Widget.Events.OPEN_SHARE_PANEL, function () {
+          send('music_share', { song_title: p.title || 'unknown', player_location: p.where, cta_id: cta + '_share' });
         });
       });
     };
